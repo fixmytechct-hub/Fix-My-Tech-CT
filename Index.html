@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fix My Tech CT | Local Tech Support & Repair | Stamford, CT</title>
+<meta name="description" content="Local tech support for homes and small businesses in Fairfield County and Westchester. Computers, phones, WiFi, printers and more. Bilingual English and Spanish. Call (204) 538-0216.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #0A1628;
+    --navy-mid: #112240;
+    --cyan: #00B4D8;
+    --cyan-light: #90E0EF;
+    --white: #FFFFFF;
+    --gray-light: #F8FAFC;
+    --gray-mid: #CBD5E1;
+    --gray-text: #64748B;
+    --font: 'Inter', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font);
+    background: var(--white);
+    color: var(--navy);
+    line-height: 1.6;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: var(--navy);
+    z-index: 100;
+    padding: 0 24px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-logo {
+    color: var(--white);
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+  }
+
+  .nav-logo span { color: var(--cyan); }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+    align-items: center;
+  }
+
+  .nav-links a {
+    color: var(--gray-mid);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--cyan); }
+
+  .lang-toggle {
+    background: transparent;
+    border: 1px solid var(--cyan);
+    color: var(--cyan);
+    padding: 6px 14px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: var(--font);
+    transition: all 0.2s;
+  }
+
+  .lang-toggle:hover {
+    background: var(--cyan);
+    color: var(--navy);
+  }
+
+  /* HERO */
+  .hero {
+    background: var(--navy);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 100px 24px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-image-col {
+    display: none;
+  }
+
+  @media (min-width: 900px) {
+    .hero-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+      max-width: 1100px;
+      margin: 0 auto;
+      width: 100%;
+    }
+    .hero-image-col {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .hero-inner {
+      max-width: 100%;
+    }
+  }
+
+  .hero-img {
+    width: 100%;
+    max-width: 480px;
+    border-radius: 16px;
+    object-fit: cover;
+    height: 420px;
+    border: 2px solid rgba(0,180,216,0.3);
+    box-shadow: 0 0 60px rgba(0,180,216,0.15);
+  }
+
+  .services-img-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-bottom: 48px;
+  }
+
+  .services-img-item {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 160px;
+  }
+
+  .services-img-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.7);
+    transition: transform 0.3s;
+  }
+
+  .services-img-item:hover img { transform: scale(1.05); }
+
+  .services-img-label {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    color: white;
+    font-size: 13px;
+    font-weight: 700;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+  }
+
+  .about-img {
+    width: 100%;
+    border-radius: 12px;
+    object-fit: cover;
+    height: 300px;
+    margin-bottom: 32px;
+    border: 2px solid rgba(0,180,216,0.2);
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -200px;
+    right: -200px;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(0,180,216,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-inner {
+    max-width: 720px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-greeting {
+    color: var(--cyan);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 20px;
+  }
+
+  .hero-headline {
+    font-size: clamp(36px, 6vw, 64px);
+    font-weight: 800;
+    color: var(--white);
+    line-height: 1.1;
+    letter-spacing: -1.5px;
+    margin-bottom: 24px;
+  }
+
+  .hero-headline .cyan { color: var(--cyan); }
+
+  .hero-sub {
+    font-size: 18px;
+    color: var(--gray-mid);
+    max-width: 540px;
+    margin-bottom: 40px;
+    line-height: 1.7;
+  }
+
+  .hero-cta-group {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .btn-primary {
+    background: var(--cyan);
+    color: var(--navy);
+    padding: 14px 28px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 16px;
+    text-decoration: none;
+    display: inline-block;
+    transition: opacity 0.2s;
+  }
+
+  .btn-primary:hover { opacity: 0.88; }
+
+  .btn-outline {
+    border: 2px solid rgba(255,255,255,0.2);
+    color: var(--white);
+    padding: 14px 28px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 16px;
+    text-decoration: none;
+    display: inline-block;
+    transition: border-color 0.2s;
+  }
+
+  .btn-outline:hover { border-color: var(--cyan); }
+
+  .hero-badges {
+    margin-top: 48px;
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--gray-mid);
+    font-size: 13px;
+    font-weight: 500;
+  }
+
+  .badge-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--cyan);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* SECTIONS */
+  section { padding: 80px 24px; }
+
+  .section-inner { max-width: 900px; margin: 0 auto; }
+
+  .section-label {
+    color: var(--cyan);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+  }
+
+  .section-title {
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 800;
+    letter-spacing: -1px;
+    line-height: 1.15;
+    margin-bottom: 16px;
+    color: var(--navy);
+  }
+
+  .section-sub {
+    color: var(--gray-text);
+    font-size: 17px;
+    max-width: 560px;
+    margin-bottom: 48px;
+    line-height: 1.7;
+  }
+
+  /* SERVICES */
+  .services-bg { background: var(--gray-light); }
+
+  .service-group { margin-bottom: 48px; }
+
+  .service-group-title {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--gray-text);
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--gray-mid);
+    margin-bottom: 0;
+  }
+
+  .service-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 18px 0;
+    border-bottom: 1px solid rgba(203,213,225,0.5);
+    gap: 24px;
+  }
+
+  .service-info {}
+
+  .service-name {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 4px;
+  }
+
+  .service-desc {
+    font-size: 14px;
+    color: var(--gray-text);
+    line-height: 1.5;
+  }
+
+  .service-price {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--cyan);
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  /* PLANS */
+  .plans-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+    margin-top: 8px;
+  }
+
+  .plan-card {
+    border: 1.5px solid var(--gray-mid);
+    border-radius: 12px;
+    padding: 32px 28px;
+    position: relative;
+    transition: border-color 0.2s;
+  }
+
+  .plan-card:hover { border-color: var(--cyan); }
+
+  .plan-card.featured {
+    border-color: var(--cyan);
+    background: var(--navy);
+    color: var(--white);
+  }
+
+  .plan-badge {
+    position: absolute;
+    top: -12px;
+    left: 28px;
+    background: var(--cyan);
+    color: var(--navy);
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+  }
+
+  .plan-name {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: var(--gray-text);
+    margin-bottom: 8px;
+  }
+
+  .plan-card.featured .plan-name { color: var(--cyan-light); }
+
+  .plan-price {
+    font-size: 42px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    line-height: 1;
+    color: var(--navy);
+    margin-bottom: 4px;
+  }
+
+  .plan-card.featured .plan-price { color: var(--white); }
+
+  .plan-period {
+    font-size: 14px;
+    color: var(--gray-text);
+    margin-bottom: 24px;
+  }
+
+  .plan-card.featured .plan-period { color: var(--gray-mid); }
+
+  .plan-features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 28px;
+  }
+
+  .plan-features li {
+    font-size: 14px;
+    color: var(--gray-text);
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    line-height: 1.4;
+  }
+
+  .plan-card.featured .plan-features li { color: var(--gray-mid); }
+
+  .plan-features li::before {
+    content: '✓';
+    color: var(--cyan);
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .plan-cta {
+    display: block;
+    text-align: center;
+    padding: 12px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 14px;
+    text-decoration: none;
+    border: 2px solid var(--cyan);
+    color: var(--cyan);
+    transition: all 0.2s;
+  }
+
+  .plan-cta:hover {
+    background: var(--cyan);
+    color: var(--navy);
+  }
+
+  .plan-card.featured .plan-cta {
+    background: var(--cyan);
+    color: var(--navy);
+  }
+
+  .plan-card.featured .plan-cta:hover { opacity: 0.88; }
+
+  /* WHY US */
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 32px;
+    margin-top: 8px;
+  }
+
+  .why-item {}
+
+  .why-icon {
+    width: 44px;
+    height: 44px;
+    background: rgba(0,180,216,0.1);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+    font-size: 20px;
+  }
+
+  .why-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 8px;
+  }
+
+  .why-desc {
+    font-size: 15px;
+    color: var(--gray-text);
+    line-height: 1.6;
+  }
+
+  /* CONTACT */
+  .contact-bg { background: var(--navy); }
+
+  .contact-bg .section-title { color: var(--white); }
+  .contact-bg .section-sub { color: var(--gray-mid); }
+  .contact-bg .section-label { color: var(--cyan); }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: start;
+  }
+
+  .contact-info { display: flex; flex-direction: column; gap: 24px; }
+
+  .contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .contact-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(0,180,216,0.15);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 18px;
+  }
+
+  .contact-item-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--gray-text);
+    margin-bottom: 4px;
+    letter-spacing: 0.5px;
+  }
+
+  .contact-item-value {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--white);
+  }
+
+  .contact-item-value a {
+    color: var(--cyan);
+    text-decoration: none;
+  }
+
+  /* FORM */
+  .contact-form { display: flex; flex-direction: column; gap: 16px; }
+
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+  .form-group { display: flex; flex-direction: column; gap: 6px; }
+
+  .form-group label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--gray-mid);
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 6px;
+    padding: 12px 14px;
+    color: var(--white);
+    font-family: var(--font);
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.2s;
+    width: 100%;
+  }
+
+  .form-group input::placeholder,
+  .form-group textarea::placeholder { color: rgba(255,255,255,0.25); }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus { border-color: var(--cyan); }
+
+  .form-group select { appearance: none; cursor: pointer; }
+  .form-group select option { background: var(--navy-mid); color: var(--white); }
+
+  .form-group textarea { resize: vertical; min-height: 100px; }
+
+  .form-submit {
+    background: var(--cyan);
+    color: var(--navy);
+    border: none;
+    padding: 14px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    font-family: var(--font);
+    transition: opacity 0.2s;
+    margin-top: 4px;
+  }
+
+  .form-submit:hover { opacity: 0.88; }
+
+  /* FOOTER */
+  footer {
+    background: #060E1A;
+    padding: 32px 24px;
+    text-align: center;
+    color: var(--gray-text);
+    font-size: 13px;
+  }
+
+  footer strong { color: var(--cyan); }
+
+  /* LANGUAGE CONTENT */
+  [data-lang="es"] { display: none !important; }
+
+  /* RESPONSIVE */
+  @media (max-width: 640px) {
+    nav { padding: 0 16px; }
+    .nav-links { display: none; }
+    section { padding: 60px 16px; }
+    .contact-grid { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    .hero { padding: 90px 16px 60px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Fix My <span>Tech</span> CT</div>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#plans">Plans</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+    
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-layout">
+  <div class="hero-inner">
+    <p class="hero-greeting" data-lang="en">Serving Fairfield County & Westchester — Bilingual Support</p>
+    <p class="hero-greeting" data-lang="es">Sirviendo a Fairfield County y Westchester — Soporte Bilingüe</p>
+
+    <h1 class="hero-headline" data-lang="en">
+      "Fix My Tech CT,<br>this is Dan —<br><span class="cyan">how can I help?"</span>
+    </h1>
+    <h1 class="hero-headline" data-lang="es">
+      "Fix My Tech CT,<br>le habla Dan —<br><span class="cyan">¿en qué le puedo ayudar?"</span>
+    </h1>
+
+    <p class="hero-sub" data-lang="en">Local tech support for homes and small businesses. Computers, phones, tablets, WiFi, printers and more. I fix it, teach you how it works, and give you a number to call when it happens again.</p>
+    <p class="hero-sub" data-lang="es">Soporte técnico local para hogares y pequeñas empresas. Computadoras, teléfonos, tablets, WiFi, impresoras y más. Lo arreglo, te explico cómo funciona y te doy mi número para la próxima vez.</p>
+
+    <div class="hero-cta-group">
+      <a href="tel:2045380216" class="btn-primary" data-lang="en">Call Now — (204) 538-0216</a>
+      <a href="tel:2045380216" class="btn-primary" data-lang="es">Llámanos — (204) 538-0216</a>
+      <a href="#services" class="btn-outline" data-lang="en">See Services</a>
+      <a href="#services" class="btn-outline" data-lang="es">Ver Servicios</a>
+    </div>
+
+    <div class="hero-badges">
+      <div class="badge"><div class="badge-dot"></div><span data-lang="en">CompTIA A+ Certified</span><span data-lang="es">Certificado CompTIA A+</span></div>
+      <div class="badge"><div class="badge-dot"></div><span data-lang="en">Bilingual English / Spanish</span><span data-lang="es">Bilingüe Inglés / Español</span></div>
+      <div class="badge"><div class="badge-dot"></div><span data-lang="en">Same-day response</span><span data-lang="es">Respuesta el mismo día</span></div>
+      <div class="badge"><div class="badge-dot"></div><span data-lang="en">No fix, no charge</span><span data-lang="es">Sin solución, sin cobro</span></div>
+    </div>
+  </div>
+  <div class="hero-image-col">
+    <img class="hero-img" src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=800&q=80" alt="Tech support professional working on laptop" loading="lazy">
+  </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services-bg" id="services">
+  <div class="section-inner">
+    <p class="section-label" data-lang="en">What We Fix</p>
+    <p class="section-label" data-lang="es">Lo Que Reparamos</p>
+    <h2 class="section-title" data-lang="en">Services & Pricing</h2>
+    <h2 class="section-title" data-lang="es">Servicios y Precios</h2>
+    <p class="section-sub" data-lang="en">Flat rate pricing. No hidden fees. I tell you the price before I start.</p>
+    <p class="section-sub" data-lang="es">Precios fijos. Sin cargos ocultos. Te digo el precio antes de comenzar.</p>
+
+    <div class="services-img-row">
+      <div class="services-img-item">
+        <img src="https://images.unsplash.com/photo-1587831990711-23ca6441447b?w=400&q=80" alt="Computer repair">
+        <span class="services-img-label">Computer Repair</span>
+      </div>
+      <div class="services-img-item">
+        <img src="https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=400&q=80" alt="WiFi and networking">
+        <span class="services-img-label">WiFi & Networking</span>
+      </div>
+      <div class="services-img-item">
+        <img src="https://images.unsplash.com/photo-1512054502232-10a0a035d672?w=400&q=80" alt="Phone and tablet setup">
+        <span class="services-img-label">Phone & Tablet</span>
+      </div>
+      <div class="services-img-item">
+        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&q=80" alt="Small business IT support">
+        <span class="services-img-label">Small Business IT</span>
+      </div>
+    </div>
+
+    <!-- Residential -->
+    <div class="service-group">
+      <div class="service-group-title" data-lang="en">Home & Residential</div>
+      <div class="service-group-title" data-lang="es">Hogar y Residencial</div>
+
+      <div class="service-item">
+        <div class="service-info">
+          <div class="service-name" data-lang="en">Computer Tune-Up & Optimization</div>
+          <div class="service-name" data-lang="es">Limpieza y Optimización de Computadora</div>
+          <div class="service-desc" data-lang="en">Speed up a slow computer, remove junk files, update software, check health</div>
+          <div class="service-desc" data-lang="es">Acelera tu computadora, elimina archivos basura, actualiza programas</div>
+        </div>
+        <div class="service-price">$75</div>
+      </div>
+
+      <div class="service-item">
+        <div class="service-info">
+          <div class="service-name" data-lang="en">Virus & Malware Removal</div>
+          <div class="service-name" data-lang="es">Eliminación de Virus y Malware</div>
+          <div class="service-desc" data-lang="en">Full removal, browser cleanup, and prevention tips so it doesn't happen again</div>
+          <div class="service-desc" data-lang="es">Eliminación completa, limpieza del navegador y consejos de prevención</div>
+        </div>
+        <div class="service-price">$85</div>
+      </div>
+
+      <div class="service-item">
+        <div class="service-info">
+          <div class="service-name" data-lang="en">New Device Setup & Data Transfer</div>
+          <div class="service-name" data-lang="es">Configuración de Dispositivo Nuevo y Transferencia</div>
+          <div class="service-desc" data-lang="en">Unbox, connect, transfer your files, install apps, walk you through everything</div>
+          <div class="service-desc" data-lang="es">Desempacamos, conectamos, transferimos archivos y te explicamos todo</div>
+        </div>
+        <div class="service-price">$100</div>
+      </div>
+
+      <div class="service-item">
+        <div class="service-info">
+          <div class="service-name" data-lang="en">Home WiFi Setup & Troubleshooting</div>
+          <div class="service-name" data-lang="es">Configuración y Solución de WiFi en Casa</div>
+          <div class="service-desc" data-lang="en">Router placement, device connections, dead spot fixes, guest network setup</div>
+          <div class="service-desc" data-lang="es">Posición del router, conexión de dispositivos, eliminación de zonas muertas</div>
+        </div>
+        <div class="service-price">$75</div>
+      </div>
+
+      <div class="service-item">
+        <div class="service-info">
+          <div class="service-name" data-lang="en">Printer Setup & Troubleshooting</div>
+          <div class="service-name" data-lang="es">Configuración y Solución de Impresora</div>
+          <div class="service-desc" data-lang="en">Install drivers, connect wirelessly, test from all devices, teach you to reconnect</div>
+          <div class="service-desc" data-lang="es">Instalación de controladores, conexión inalámbrica, prueba desde todos los dispositivos</div>
+        </div>
+        <div class="service-price">$60</div>
+      </div>
+
+      <div class="service-item">
+        <div class="service-info">
+          <div class="service-name" data-lang="en">Phone & Tablet Setup</div>
+          <div class="service-name" data-lang="es">Configuración de Teléfono y Tablet</div>
+          <div class="service-desc" data-lang="en">iOS and Android — accounts, apps, data transfer from old device</div>
+          <div class="service-desc" data-lang="es">iOS y Android — cuentas, aplicaciones, transferencia de datos del dispositivo anterior</div>
+        </div>
+        <div class="service-price">$50</div>
+      </div>
+
+      <div class="service-item">
+        <div class="service-info">
+          <div class="service-name" data-lang="en">Password Reset & Account Recovery</div>
+          <div class="service-name" data-lang="es">Restablecimiento de Contraseña y Recuperación</div>
+          <div class="service-desc" data-lang="en">Recover access, set up a password manager, enable two-factor authentication</div>
+          <div class="service-desc" data-lang="es">Recuperar acceso, configurar gestor de contraseñas, activar autenticación</div>
+        </div>
+        <div class="service-price">$50</div>
+      </div>
+
+      <div class="service-item">
+        <div class="service-info">
+          <div class="service-name" data-lang="en">Smart TV & Streaming Setup</div>
+          <div class="service-name" data-lang="es">Configuración de Smart TV y Streaming</div>
+          <div class="service-desc" data-lang="en">Connect to WiFi, set up Netflix, Hulu, Disney+, pair remotes, walk through features</div>
+          <div class="service-desc" data-lang="es">Conectar a WiFi, configurar Netflix, Hulu, Disney+, emparejar controles</div>
+        </div>
+        <div class="service-price">$60</div>
+      </div>
+    </div>
+
+    <!-- Small Business -->
+    <div class="service-group">
+      <div class="service-group-title" data-lang="en">Small Business</div>
+      <div class="service-group-title" data-lang="es">Pequeñas Empresas</div>
+
+      <div class="service-item">
+        <div class="service-info">
+          <div class="service-name" data-lang="en">Microsoft 365 Setup</div>
+          <div class="service-name" data-lang="es">Configuración de Microsoft 365</div>
+          <div class="service-desc" data-lang="en">Business email, Outlook, Teams, OneDrive, SharePoint — fully set up and trained</div>
+          <div class="service-desc" data-lang="es">Correo empresarial, Outlook, Teams, OneDrive, SharePoint — configurado y con capacitación</div>
+        </div>
+        <div class="service-price">$200</div>
+      </div>
+
+      <div class="service-item">
+        <div class="service-info">
+          <div class="service-name" data-lang="en">Office Network Setup</div>
+          <div class="service-name" data-lang="es">Configuración de Red de Oficina</div>
+          <div class="service-desc" data-lang="en">Router, switch, wired connections, secure WiFi, guest network, full documentation</div>
+          <div class="service-desc" data-lang="es">Router, switch, conexiones cableadas, WiFi seguro, red de invitados, documentación</div>
+        </div>
+        <div class="service-price">$200–$300</div>
+      </div>
+
+      <div class="service-item">
+        <div class="service-info">
+          <div class="service-name" data-lang="en">Workstation Setup</div>
+          <div class="service-name" data-lang="es">Configuración de Estación de Trabajo</div>
+          <div class="service-desc" data-lang="en">Setup, software install, network connection, user account, tested and ready</div>
+          <div class="service-desc" data-lang="es">Configuración, instalación de software, conexión de red, cuenta de usuario</div>
+        </div>
+        <div class="service-price">$150 each</div>
+      </div>
+
+      <div class="service-item">
+        <div class="service-info">
+          <div class="service-name" data-lang="en">Cybersecurity Checkup</div>
+          <div class="service-name" data-lang="es">Revisión de Ciberseguridad</div>
+          <div class="service-desc" data-lang="en">Review antivirus, passwords, access controls, update vulnerabilities, written report</div>
+          <div class="service-desc" data-lang="es">Revisión de antivirus, contraseñas, controles de acceso, informe escrito</div>
+        </div>
+        <div class="service-price">$150</div>
+      </div>
+
+      <div class="service-item">
+        <div class="service-info">
+          <div class="service-name" data-lang="en">Staff Tech Training</div>
+          <div class="service-name" data-lang="es">Capacitación Técnica para Personal</div>
+          <div class="service-desc" data-lang="en">Microsoft 365, email safety, phishing awareness, how to use your tools effectively</div>
+          <div class="service-desc" data-lang="es">Microsoft 365, seguridad de correo, conciencia de phishing, uso efectivo de herramientas</div>
+        </div>
+        <div class="service-price">$125/hr</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MONTHLY PLANS -->
+<section id="plans">
+  <div class="section-inner">
+    <p class="section-label" data-lang="en">Ongoing Support</p>
+    <p class="section-label" data-lang="es">Soporte Continuo</p>
+    <h2 class="section-title" data-lang="en">Monthly Plans</h2>
+    <h2 class="section-title" data-lang="es">Planes Mensuales</h2>
+    <p class="section-sub" data-lang="en">Have a tech person on call every month. No surprise bills — just flat monthly support.</p>
+    <p class="section-sub" data-lang="es">Ten un técnico disponible cada mes. Sin facturas sorpresa, solo soporte mensual fijo.</p>
+
+    <div class="plans-grid">
+      <div class="plan-card">
+        <div class="plan-name" data-lang="en">BASIC</div>
+        <div class="plan-name" data-lang="es">BÁSICO</div>
+        <div class="plan-price">$149</div>
+        <div class="plan-period" data-lang="en">per month</div>
+        <div class="plan-period" data-lang="es">por mes</div>
+        <ul class="plan-features">
+          <li data-lang="en">Remote support up to 2 hours</li>
+          <li data-lang="es">Soporte remoto hasta 2 horas</li>
+          <li data-lang="en">Monthly check-in call</li>
+          <li data-lang="es">Llamada mensual de revisión</li>
+          <li data-lang="en">Email & phone support</li>
+          <li data-lang="es">Soporte por correo y teléfono</li>
+          <li data-lang="en">Response within 24 hours</li>
+          <li data-lang="es">Respuesta en 24 horas</li>
+        </ul>
+        <a href="#contact" class="plan-cta" data-lang="en">Get Started</a>
+        <a href="#contact" class="plan-cta" data-lang="es">Comenzar</a>
+      </div>
+
+      <div class="plan-card featured">
+        <div class="plan-badge" data-lang="en">Most Popular</div>
+        <div class="plan-badge" data-lang="es">Más Popular</div>
+        <div class="plan-name" data-lang="en">STANDARD</div>
+        <div class="plan-name" data-lang="es">ESTÁNDAR</div>
+        <div class="plan-price">$249</div>
+        <div class="plan-period" data-lang="en">per month</div>
+        <div class="plan-period" data-lang="es">por mes</div>
+        <ul class="plan-features">
+          <li data-lang="en">Remote support up to 4 hours</li>
+          <li data-lang="es">Soporte remoto hasta 4 horas</li>
+          <li data-lang="en">One on-site visit per month</li>
+          <li data-lang="es">Una visita mensual en persona</li>
+          <li data-lang="en">Microsoft 365 basic admin</li>
+          <li data-lang="es">Administración básica de Microsoft 365</li>
+          <li data-lang="en">Priority response within 4 hours</li>
+          <li data-lang="es">Respuesta prioritaria en 4 horas</li>
+        </ul>
+        <a href="#contact" class="plan-cta" data-lang="en">Get Started</a>
+        <a href="#contact" class="plan-cta" data-lang="es">Comenzar</a>
+      </div>
+
+      <div class="plan-card">
+        <div class="plan-name" data-lang="en">PREMIUM</div>
+        <div class="plan-name" data-lang="es">PREMIUM</div>
+        <div class="plan-price">$399</div>
+        <div class="plan-period" data-lang="en">per month</div>
+        <div class="plan-period" data-lang="es">por mes</div>
+        <ul class="plan-features">
+          <li data-lang="en">Unlimited remote support</li>
+          <li data-lang="es">Soporte remoto ilimitado</li>
+          <li data-lang="en">Two on-site visits per month</li>
+          <li data-lang="es">Dos visitas mensuales en persona</li>
+          <li data-lang="en">Full Microsoft 365 admin</li>
+          <li data-lang="es">Administración completa de Microsoft 365</li>
+          <li data-lang="en">Response within 2 hours</li>
+          <li data-lang="es">Respuesta en 2 horas</li>
+          <li data-lang="en">User onboarding & offboarding</li>
+          <li data-lang="es">Alta y baja de usuarios</li>
+        </ul>
+        <a href="#contact" class="plan-cta" data-lang="en">Get Started</a>
+        <a href="#contact" class="plan-cta" data-lang="es">Comenzar</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="services-bg" id="about">
+  <div class="section-inner">
+    <p class="section-label" data-lang="en">Why Fix My Tech CT</p>
+    <p class="section-label" data-lang="es">Por Qué Fix My Tech CT</p>
+    <h2 class="section-title" data-lang="en">Tech help that actually helps</h2>
+    <h2 class="section-title" data-lang="es">Ayuda técnica que de verdad ayuda</h2>
+    <p class="section-sub" data-lang="en">I don't just fix it and leave. I show you what happened and what to do next time.</p>
+    <p class="section-sub" data-lang="es">No solo lo arreglo y me voy. Te explico qué pasó y qué hacer la próxima vez.</p>
+
+    <img class="about-img" src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=1200&q=80" alt="Tech professional helping a client" loading="lazy">
+    <div class="why-grid">
+      <div class="why-item">
+        <div class="why-icon">🎓</div>
+        <div class="why-title" data-lang="en">We Teach While We Fix</div>
+        <div class="why-title" data-lang="es">Enseñamos Mientras Reparamos</div>
+        <div class="why-desc" data-lang="en">Every visit includes a walkthrough of what we did and why, so you're not left in the dark after we leave.</div>
+        <div class="why-desc" data-lang="es">Cada visita incluye una explicación de lo que hicimos y por qué, para que no te quedes sin entender.</div>
+      </div>
+      <div class="why-item">
+        <div class="why-icon">🌎</div>
+        <div class="why-title" data-lang="en">Bilingual Support</div>
+        <div class="why-title" data-lang="es">Soporte Bilingüe</div>
+        <div class="why-desc" data-lang="en">Fully bilingual in English and Spanish. Tech support in the language you're most comfortable with.</div>
+        <div class="why-desc" data-lang="es">Totalmente bilingüe en inglés y español. Soporte técnico en el idioma con el que te sientas más cómodo.</div>
+      </div>
+      <div class="why-item">
+        <div class="why-icon">📋</div>
+        <div class="why-title" data-lang="en">Flat Rate Pricing</div>
+        <div class="why-title" data-lang="es">Precios Fijos</div>
+        <div class="why-desc" data-lang="en">You know the price before we start. No surprises, no hidden fees, no hourly uncertainty.</div>
+        <div class="why-desc" data-lang="es">Sabes el precio antes de empezar. Sin sorpresas, sin cargos ocultos, sin incertidumbre por hora.</div>
+      </div>
+      <div class="why-item">
+        <div class="why-icon">🏅</div>
+        <div class="why-title" data-lang="en">CompTIA A+ Certified</div>
+        <div class="why-title" data-lang="es">Certificado CompTIA A+</div>
+        <div class="why-desc" data-lang="en">Professionally certified and actively working in enterprise IT — not just a hobbyist with a screwdriver.</div>
+        <div class="why-desc" data-lang="es">Certificado profesionalmente y trabajando activamente en TI empresarial.</div>
+      </div>
+      <div class="why-item">
+        <div class="why-icon">📞</div>
+        <div class="why-title" data-lang="en">A Real Person Answers</div>
+        <div class="why-title" data-lang="es">Una Persona Real Contesta</div>
+        <div class="why-desc" data-lang="en">Call or text (204) 538-0216 and Dan answers. No call centers, no bots, no runaround.</div>
+        <div class="why-desc" data-lang="es">Llama o escribe al (204) 538-0216 y Dan contesta. Sin centros de llamadas ni robots.</div>
+      </div>
+      <div class="why-item">
+        <div class="why-icon">✅</div>
+        <div class="why-title" data-lang="en">No Fix, No Charge</div>
+        <div class="why-title" data-lang="es">Sin Solución, Sin Cobro</div>
+        <div class="why-desc" data-lang="en">If we can't fix it, you don't pay. Simple as that.</div>
+        <div class="why-desc" data-lang="es">Si no podemos arreglarlo, no pagas. Así de simple.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-bg" id="contact">
+  <div class="section-inner">
+    <p class="section-label" data-lang="en">Get In Touch</p>
+    <p class="section-label" data-lang="es">Contáctanos</p>
+    <h2 class="section-title" data-lang="en">Let's fix it today</h2>
+    <h2 class="section-title" data-lang="es">Arreglémoslo hoy</h2>
+    <p class="section-sub" data-lang="en">Call, text, or fill out the form. Same-day response guaranteed.</p>
+    <p class="section-sub" data-lang="es">Llama, envía un mensaje o completa el formulario. Respuesta el mismo día garantizada.</p>
+
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="contact-item">
+          <div class="contact-icon">📞</div>
+          <div>
+            <div class="contact-item-label" data-lang="en">CALL OR TEXT</div>
+            <div class="contact-item-label" data-lang="es">LLAMA O ESCRIBE</div>
+            <div class="contact-item-value"><a href="tel:2045380216">(204) 538-0216</a></div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📧</div>
+          <div>
+            <div class="contact-item-label" data-lang="en">EMAIL</div>
+            <div class="contact-item-label" data-lang="es">CORREO</div>
+            <div class="contact-item-value"><a href="mailto:Fixmytechct@gmail.com">Fixmytechct@gmail.com</a></div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <div>
+            <div class="contact-item-label" data-lang="en">SERVICE AREA</div>
+            <div class="contact-item-label" data-lang="es">ÁREA DE SERVICIO</div>
+            <div class="contact-item-value" data-lang="en">Fairfield County, CT & Westchester, NY</div>
+            <div class="contact-item-value" data-lang="es">Condado de Fairfield, CT y Westchester, NY</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">🕐</div>
+          <div>
+            <div class="contact-item-label" data-lang="en">HOURS</div>
+            <div class="contact-item-label" data-lang="es">HORARIO</div>
+            <div class="contact-item-value" data-lang="en">Mon–Sat, 9am–7pm</div>
+            <div class="contact-item-value" data-lang="es">Lun–Sáb, 9am–7pm</div>
+          </div>
+        </div>
+      </div>
+
+      <form class="contact-form" onsubmit="handleSubmit(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label data-lang="en">First Name</label>
+            <label data-lang="es">Nombre</label>
+            <input type="text" placeholder="John" required>
+          </div>
+          <div class="form-group">
+            <label data-lang="en">Last Name</label>
+            <label data-lang="es">Apellido</label>
+            <input type="text" placeholder="Smith" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label data-lang="en">Phone Number</label>
+          <label data-lang="es">Número de Teléfono</label>
+          <input type="tel" placeholder="(203) 555-0000" required>
+        </div>
+        <div class="form-group">
+          <label data-lang="en">What do you need help with?</label>
+          <label data-lang="es">¿Con qué necesitas ayuda?</label>
+          <select required>
+            <option value="" data-lang="en">Select a service...</option>
+            <option value="" data-lang="es">Selecciona un servicio...</option>
+            <option data-lang="en">Computer Tune-Up</option>
+            <option data-lang="es">Limpieza de Computadora</option>
+            <option data-lang="en">Virus Removal</option>
+            <option data-lang="es">Eliminación de Virus</option>
+            <option data-lang="en">WiFi Setup / Troubleshooting</option>
+            <option data-lang="es">Configuración de WiFi</option>
+            <option data-lang="en">New Device Setup</option>
+            <option data-lang="es">Configuración de Dispositivo Nuevo</option>
+            <option data-lang="en">Printer Setup</option>
+            <option data-lang="es">Configuración de Impresora</option>
+            <option data-lang="en">Phone or Tablet</option>
+            <option data-lang="es">Teléfono o Tablet</option>
+            <option data-lang="en">Small Business IT</option>
+            <option data-lang="es">TI para Pequeña Empresa</option>
+            <option data-lang="en">Monthly Support Plan</option>
+            <option data-lang="es">Plan de Soporte Mensual</option>
+            <option data-lang="en">Something Else</option>
+            <option data-lang="es">Algo Más</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label data-lang="en">Tell me more (optional)</label>
+          <label data-lang="es">Cuéntame más (opcional)</label>
+          <textarea placeholder="What's going on with your device?" data-lang="en"></textarea>
+          <textarea placeholder="¿Qué está pasando con tu dispositivo?" data-lang="es"></textarea>
+        </div>
+        <button type="submit" class="form-submit" data-lang="en">Send Message</button>
+        <button type="submit" class="form-submit" data-lang="es">Enviar Mensaje</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p data-lang="en">© 2026 <strong>Fix My Tech CT</strong> — Fairfield County, CT & Westchester, NY — <a href="tel:2045380216" style="color: var(--cyan); text-decoration: none;">(204) 538-0216</a></p>
+  <p data-lang="es">© 2026 <strong>Fix My Tech CT</strong> — Condado de Fairfield, CT y Westchester, NY — <a href="tel:2045380216" style="color: var(--cyan); text-decoration: none;">(204) 538-0216</a></p>
+</footer>
+
+<script>
+  let currentLang = "en";
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('.form-submit');
+    btn.textContent = currentLang === 'en' ? 'Message Sent! We\'ll call you soon.' : '¡Mensaje Enviado! Te llamaremos pronto.';
+    btn.style.background = '#22c55e';
+    setTimeout(() => {
+      btn.textContent = currentLang === 'en' ? 'Send Message' : 'Enviar Mensaje';
+      btn.style.background = '';
+      e.target.reset();
+    }, 3000);
+  }
+</script>
+</body>
+</html>
