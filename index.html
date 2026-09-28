@@ -211,6 +211,12 @@ section{padding:80px 5%}
   section{padding:60px 5%}
 }
 </style>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+  (function(){
+    emailjs.init({publicKey: "YOUR_PUBLIC_KEY"});
+  })();
+</script>
 </head>
 <body>
 
@@ -642,24 +648,24 @@ section{padding:80px 5%}
           </div>
         </div>
       </div>
-      <form class="contact-form" onsubmit="handleSubmit(event)">
+      <form class="contact-form" id="contactForm" onsubmit="handleSubmit(event)">
         <div class="form-row">
           <div class="form-group">
             <label>First Name</label>
-            <input type="text" placeholder="John" required>
+            <input type="text" name="first_name" placeholder="John" required>
           </div>
           <div class="form-group">
             <label>Last Name</label>
-            <input type="text" placeholder="Smith" required>
+            <input type="text" name="last_name" placeholder="Smith" required>
           </div>
         </div>
         <div class="form-group">
           <label>Phone Number</label>
-          <input type="tel" placeholder="(203) 555-0000" required>
+          <input type="tel" name="phone" placeholder="(203) 555-0000" required>
         </div>
         <div class="form-group">
           <label>What do you need help with?</label>
-          <select required>
+          <select name="service" required>
             <option value="">Select a service...</option>
             <option>Computer Tune-Up</option>
             <option>Virus Removal</option>
@@ -676,7 +682,7 @@ section{padding:80px 5%}
         </div>
         <div class="form-group">
           <label>Tell me more (optional)</label>
-          <textarea placeholder="What is going on with your device?"></textarea>
+          <textarea name="message" placeholder="What is going on with your device?"></textarea>
         </div>
         <button type="submit" class="form-submit" id="submitBtn">Send Message</button>
       </form>
@@ -729,6 +735,45 @@ section{padding:80px 5%}
 </footer>
 
 <script>
+async function handleSubmit(e){
+  e.preventDefault();
+  const btn = document.getElementById('submitBtn');
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+
+  const form = document.getElementById('contactForm');
+  const formData = new FormData(form);
+
+  const templateParams = {
+    first_name: formData.get('first_name'),
+    last_name: formData.get('last_name'),
+    phone: formData.get('phone'),
+    service: formData.get('service'),
+    message: formData.get('message') || 'No additional details provided',
+    to_email: 'Fixmytechct@gmail.com'
+  };
+
+  try {
+    await emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams);
+    btn.textContent = 'Message Sent! We will call you soon.';
+    btn.style.background = '#22c55e';
+    form.reset();
+    setTimeout(() => {
+      btn.textContent = 'Send Message';
+      btn.style.background = '';
+      btn.disabled = false;
+    }, 4000);
+  } catch(error) {
+    btn.textContent = 'Something went wrong. Please call us directly.';
+    btn.style.background = '#ef4444';
+    btn.disabled = false;
+    setTimeout(() => {
+      btn.textContent = 'Send Message';
+      btn.style.background = '';
+    }, 4000);
+  }
+}
+
 function toggleMenu(){
   const links = document.querySelector('.nav-links');
   if(links.style.display === 'flex'){
@@ -736,18 +781,6 @@ function toggleMenu(){
   } else {
     links.style.cssText = 'display:flex;flex-direction:column;position:fixed;top:68px;left:0;right:0;background:var(--navy);padding:24px 5%;gap:16px;border-bottom:1px solid rgba(0,180,216,0.15)';
   }
-}
-
-function handleSubmit(e){
-  e.preventDefault();
-  const btn = document.getElementById('submitBtn');
-  btn.textContent = 'Message Sent! We will call you soon.';
-  btn.style.background = '#22c55e';
-  setTimeout(() => {
-    btn.textContent = 'Send Message';
-    btn.style.background = '';
-    e.target.reset();
-  }, 3000);
 }
 
 // Close mobile menu when clicking a link
