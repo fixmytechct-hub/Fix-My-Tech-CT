@@ -750,6 +750,8 @@ async function handleSubmit(e){
     phone: formData.get('phone'),
     service: formData.get('service'),
     message: formData.get('message') || 'No additional details provided',
+    name: formData.get('first_name') + ' ' + formData.get('last_name'),
+    from_name: formData.get('first_name') + ' ' + formData.get('last_name'),
     to_email: 'Fixmytechct@gmail.com'
   };
 
@@ -764,13 +766,15 @@ async function handleSubmit(e){
       btn.disabled = false;
     }, 4000);
   } catch(error) {
-    btn.textContent = 'Something went wrong. Please call us directly.';
+    console.error('EmailJS error:', error);
+    const code = (error && error.status) ? ' (error ' + error.status + ')' : '';
+    btn.textContent = 'Something went wrong' + code + '. Please call (475) 619-1440.';
     btn.style.background = '#ef4444';
     btn.disabled = false;
     setTimeout(() => {
       btn.textContent = 'Send Message';
       btn.style.background = '';
-    }, 4000);
+    }, 8000);
   }
 }
 
