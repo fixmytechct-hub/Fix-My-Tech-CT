@@ -3,8 +3,35 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fix My Tech CT | Local Tech Support & Repair | Fairfield County & Westchester</title>
-<meta name="description" content="Local tech support for homes and small businesses in Fairfield County CT and Westchester NY. Computers, phones, WiFi, printers and more. Bilingual English and Spanish. Call (203) 816-0678.">
+<title>Computer Repair Stamford CT | Fix My Tech CT</title>
+<meta name="description" content="Computer repair, virus removal, WiFi and printer help in Stamford, Fairfield County CT and Westchester NY. Flat prices, no fix no charge. Se habla español. Call (203) 816-0678.">
+<link rel="canonical" href="https://fixmytechct.com/">
+<meta name="theme-color" content="#0A1628">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Computer Repair Stamford CT | Fix My Tech CT">
+<meta property="og:description" content="Local computer repair and tech support in Stamford, Fairfield County and Westchester. Flat prices, no fix no charge.">
+<meta property="og:url" content="https://fixmytechct.com/">
+<meta property="og:image" content="https://fixmytechct.com/dan.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Fix My Tech CT",
+  "url": "https://fixmytechct.com/",
+  "image": "https://fixmytechct.com/dan.jpg",
+  "telephone": "+12038160678",
+  "email": "Fixmytechct@gmail.com",
+  "description": "Computer repair, virus removal, WiFi, printer and small business IT support in Stamford, Fairfield County CT and Westchester NY.",
+  "areaServed": ["Stamford, CT", "Greenwich, CT", "Norwalk, CT", "Westport, CT", "Fairfield, CT", "Darien, CT", "New Canaan, CT", "Bridgeport, CT", "White Plains, NY", "Scarsdale, NY", "Yonkers, NY", "New Rochelle, NY"],
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+    "opens": "09:00",
+    "closes": "19:00"
+  },
+  "knowsLanguage": ["English", "Spanish"]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
@@ -42,7 +69,7 @@ nav{position:fixed;top:0;left:0;right:0;background:rgba(10,22,40,0.97);backdrop-
 .hero::after{content:'';position:absolute;bottom:-200px;left:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(0,180,216,0.06) 0%,transparent 70%);pointer-events:none}
 .hero-layout{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;max-width:1100px;margin:0 auto;width:100%;position:relative;z-index:1}
 .hero-eyebrow{color:var(--cyan);font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:20px}
-.hero-headline{font-size:clamp(36px,5vw,60px);font-weight:900;color:var(--white);line-height:1.05;letter-spacing:-2px;margin-bottom:24px}
+.hero-headline{font-size:clamp(32px,4.4vw,54px);font-weight:900;color:var(--white);line-height:1.05;letter-spacing:-2px;margin-bottom:24px}
 .hero-headline .cyan{color:var(--cyan)}
 .hero-sub{font-size:17px;color:var(--gray-mid);max-width:500px;margin-bottom:36px;line-height:1.75}
 .hero-cta-group{display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin-bottom:40px}
@@ -55,7 +82,7 @@ nav{position:fixed;top:0;left:0;right:0;background:rgba(10,22,40,0.97);backdrop-
 .badge-dot{width:7px;height:7px;background:var(--cyan);border-radius:50%;flex-shrink:0}
 .hero-image-col{display:flex;justify-content:center;align-items:center}
 .hero-img-wrap{position:relative}
-.hero-img{width:100%;max-width:460px;border-radius:20px;object-fit:cover;height:460px;border:2px solid rgba(0,180,216,0.25);box-shadow:0 0 80px rgba(0,180,216,0.12)}
+.hero-img{width:100%;max-width:460px;border-radius:20px;object-fit:cover;object-position:center 20%;height:460px;border:2px solid rgba(0,180,216,0.25);box-shadow:0 0 80px rgba(0,180,216,0.12)}
 .hero-img-badge{position:absolute;bottom:24px;left:-20px;background:var(--navy-mid);border:1px solid rgba(0,180,216,0.3);border-radius:12px;padding:14px 20px;display:flex;align-items:center;gap:12px}
 .hero-img-badge-icon{font-size:24px}
 .hero-img-badge-text{color:var(--white);font-size:13px;font-weight:700}
@@ -187,10 +214,20 @@ section{padding:80px 5%}
 .footer-bottom{border-top:1px solid rgba(255,255,255,0.06);padding-top:24px;text-align:center;color:var(--gray-text);font-size:13px;max-width:1000px;margin:0 auto}
 .footer-bottom a{color:var(--cyan);text-decoration:none}
 
+/* MOBILE CALL BAR */
+.mobile-bar{display:none;position:fixed;left:0;right:0;bottom:0;z-index:99;background:var(--navy);border-top:1px solid rgba(0,180,216,0.3);padding:10px 5%;gap:10px}
+.mobile-bar a{flex:1;text-align:center;padding:13px 10px;border-radius:8px;font-weight:800;font-size:15px;text-decoration:none}
+.mobile-bar .mb-call{background:var(--cyan);color:var(--navy)}
+.mobile-bar .mb-text{border:2px solid var(--cyan);color:var(--cyan)}
+
 /* RESPONSIVE */
 @media(max-width:900px){
   .hero-layout{grid-template-columns:1fr}
-  .hero-image-col{display:none}
+  .hero{min-height:auto;padding:96px 5% 56px}
+  .hero-img{height:340px;max-width:100%}
+  .hero-img-badge{left:12px;bottom:12px}
+  body{padding-bottom:64px}
+  .mobile-bar{display:flex}
   .stats-grid{grid-template-columns:repeat(2,1fr)}
   .how-grid{grid-template-columns:1fr}
   .plans-grid{grid-template-columns:1fr}
@@ -227,9 +264,9 @@ section{padding:80px 5%}
     <li><a href="#how">How It Works</a></li>
     <li><a href="#services">Services</a></li>
     <li><a href="#plans">Plans</a></li>
-    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#about">Why Us</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="tel:2038160678" class="nav-cta">📞 Call Now</a></li>
+    <li><a href="tel:+12038160678" class="nav-cta">📞 Call Now</a></li>
   </ul>
   <div class="nav-hamburger" onclick="toggleMenu()">
     <span></span><span></span><span></span>
@@ -240,30 +277,30 @@ section{padding:80px 5%}
 <section class="hero">
   <div class="hero-layout">
     <div>
-      <p class="hero-eyebrow">Fairfield County CT & Westchester NY</p>
+      <p class="hero-eyebrow">Stamford CT · Fairfield County · Westchester NY</p>
       <h1 class="hero-headline">
-        "Fix My Tech CT,<br>this is Dan —<br><span class="cyan">how can I help?"</span>
+        Computer Repair in <span class="cyan">Stamford &amp; Fairfield County</span>
       </h1>
-      <p class="hero-sub">Local tech support for homes and small businesses. Computers, phones, tablets, WiFi, printers and more. We fix it, teach you how it works, and give you a number to call when it happens again.</p>
+      <p class="hero-sub">Hi, I'm Dan. I fix computers, phones, WiFi and printers for homes and small businesses, then show you what went wrong so you know what to do next time. Flat price, quoted before I start.</p>
       <div class="hero-cta-group">
-        <a href="tel:2038160678" class="btn-primary">📞 Call (203) 816-0678</a>
+        <a href="tel:+12038160678" class="btn-primary">📞 Call (203) 816-0678</a>
         <a href="#services" class="btn-outline">See Services</a>
       </div>
       <div class="hero-badges">
         <div class="badge"><div class="badge-dot"></div>CompTIA A+ Certified</div>
-        <div class="badge"><div class="badge-dot"></div>Bilingual EN / ES</div>
+        <div class="badge"><div class="badge-dot"></div>Se habla español</div>
         <div class="badge"><div class="badge-dot"></div>Same-Day Response</div>
         <div class="badge"><div class="badge-dot"></div>No Fix, No Charge</div>
       </div>
     </div>
     <div class="hero-image-col">
       <div class="hero-img-wrap">
-        <img class="hero-img" src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=800&q=80" alt="Tech support professional" loading="lazy">
+        <img class="hero-img" src="dan.jpg" alt="Dan, owner of Fix My Tech CT, repairing a desktop PC" width="1000" height="914">
         <div class="hero-img-badge">
-          <div class="hero-img-badge-icon">⭐</div>
+          <div class="hero-img-badge-icon">🛠️</div>
           <div>
-            <div class="hero-img-badge-text">5-Star Rated</div>
-            <div class="hero-img-badge-sub">Fairfield County & Westchester</div>
+            <div class="hero-img-badge-text">Dan, Owner &amp; Technician</div>
+            <div class="hero-img-badge-sub">CompTIA A+ Certified</div>
           </div>
         </div>
       </div>
@@ -275,20 +312,20 @@ section{padding:80px 5%}
 <div class="stats">
   <div class="stats-grid">
     <div class="stat-item">
-      <div class="stat-num">100+</div>
-      <div class="stat-label">Clients Served</div>
-    </div>
-    <div class="stat-item">
       <div class="stat-num">A+</div>
       <div class="stat-label">CompTIA Certified</div>
     </div>
     <div class="stat-item">
-      <div class="stat-num">Same</div>
-      <div class="stat-label">Day Response</div>
+      <div class="stat-num">EN / ES</div>
+      <div class="stat-label">Bilingual Support</div>
     </div>
     <div class="stat-item">
-      <div class="stat-num">100%</div>
-      <div class="stat-label">Satisfaction Guaranteed</div>
+      <div class="stat-num">Same Day</div>
+      <div class="stat-label">Response</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">$0</div>
+      <div class="stat-label">If We Can't Fix It</div>
     </div>
   </div>
 </div>
@@ -459,89 +496,8 @@ section{padding:80px 5%}
   </div>
 </section>
 
-<!-- REVIEWS -->
-<section class="reviews-bg" id="reviews">
-  <div class="section-inner">
-    <p class="section-label">What Clients Say</p>
-    <h2 class="section-title" style="color:var(--white)">Fairfield County Trusts Fix My Tech CT.</h2>
-    <p class="section-sub">Real clients, real results. Here is what people are saying.</p>
-    <div class="reviews-grid">
-      <div class="review-card">
-        <div class="review-stars">★★★★★</div>
-        <div class="review-text">"Called at 6 PM and Dan picked up immediately. He remoted into my laptop, removed a nasty virus, and had everything running in under an hour. Incredibly professional and the price was exactly what he quoted. Will 100% call again."</div>
-        <div class="review-author">
-          <div class="review-avatar">JM</div>
-          <div>
-            <div class="review-name">James M.</div>
-            <div class="review-location">Stamford, CT</div>
-          </div>
-        </div>
-      </div>
-      <div class="review-card">
-        <div class="review-stars">★★★★★</div>
-        <div class="review-text">"My WiFi has been terrible for years. Dan came in, repositioned the router, fixed the settings, and now every room in my house has full signal. He also showed me what to do if it drops. Best $75 I ever spent."</div>
-        <div class="review-author">
-          <div class="review-avatar">SR</div>
-          <div>
-            <div class="review-name">Sandra R.</div>
-            <div class="review-location">Greenwich, CT</div>
-          </div>
-        </div>
-      </div>
-      <div class="review-card">
-        <div class="review-stars">★★★★★</div>
-        <div class="review-text">"Set up Microsoft 365 for my whole office. Dan trained my entire staff in one afternoon and was patient with everyone. Bilingual too which helped with some of my team. Cannot recommend enough."</div>
-        <div class="review-author">
-          <div class="review-avatar">TP</div>
-          <div>
-            <div class="review-name">Thomas P.</div>
-            <div class="review-location">Norwalk, CT</div>
-          </div>
-        </div>
-      </div>
-      <div class="review-card">
-        <div class="review-stars">★★★★★</div>
-        <div class="review-text">"My computer was so slow it was basically unusable. Dan tuned it up and it runs like new. What I loved most is that he explained everything he did so I actually understand my own computer now. Phenomenal service."</div>
-        <div class="review-author">
-          <div class="review-avatar">AL</div>
-          <div>
-            <div class="review-name">Ashley L.</div>
-            <div class="review-location">Westport, CT</div>
-          </div>
-        </div>
-      </div>
-      <div class="review-card">
-        <div class="review-stars">★★★★★</div>
-        <div class="review-text">"Used Fix My Tech CT to set up three new workstations for my small business. Dan showed up exactly when he said he would, worked efficiently, and left everything documented. Reliable and professional."</div>
-        <div class="review-author">
-          <div class="review-avatar">DK</div>
-          <div>
-            <div class="review-name">David K.</div>
-            <div class="review-location">Darien, CT</div>
-          </div>
-        </div>
-      </div>
-      <div class="review-card">
-        <div class="review-stars">★★★★★</div>
-        <div class="review-text">"I have used three different tech guys over the years. Dan is the only one I will ever call again. Honest pricing, great communication, and he actually teaches you instead of just fixing it and disappearing."</div>
-        <div class="review-author">
-          <div class="review-avatar">MH</div>
-          <div>
-            <div class="review-name">Maria H.</div>
-            <div class="review-location">Fairfield, CT</div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="reviews-cta">
-      <p>Happy with our service? Leave us a Google review and get 15% off your next visit.</p>
-      <a href="#contact" class="btn-primary">Leave a Review</a>
-    </div>
-  </div>
-</section>
-
 <!-- WHY US -->
-<section id="about">
+<section id="about" style="border-top:1px solid var(--gray-mid)">
   <div class="section-inner">
     <p class="section-label">Why Fix My Tech CT</p>
     <h2 class="section-title">Tech help that actually helps.</h2>
@@ -565,7 +521,7 @@ section{padding:80px 5%}
       <div class="why-item">
         <div class="why-icon">🏅</div>
         <div class="why-title">CompTIA A+ Certified</div>
-        <div class="why-desc">Professionally certified and actively working in enterprise IT every day. Not just a hobbyist with a screwdriver.</div>
+        <div class="why-desc">Professionally certified, with hands-on experience building, repairing and troubleshooting PCs and networks.</div>
       </div>
       <div class="why-item">
         <div class="why-icon">📞</div>
@@ -616,7 +572,7 @@ section{padding:80px 5%}
           <div class="contact-icon">📞</div>
           <div>
             <div class="contact-item-label">Call or Text</div>
-            <div class="contact-item-value"><a href="tel:2038160678">(203) 816-0678</a></div>
+            <div class="contact-item-value"><a href="tel:+12038160678">(203) 816-0678</a></div>
           </div>
         </div>
         <div class="contact-item">
@@ -695,7 +651,7 @@ section{padding:80px 5%}
   <div class="footer-grid">
     <div class="footer-brand">
       <a href="#" class="nav-logo">Fix My <span>Tech</span> CT</a>
-      <p>Fairfield County's trusted local tech support for homes and small businesses. We fix it, we teach it.</p>
+      <p>Local tech support for homes and small businesses in Stamford, Fairfield County and Westchester. We fix it, we teach it.</p>
     </div>
     <div>
       <div class="footer-col-title">Services</div>
@@ -721,18 +677,23 @@ section{padding:80px 5%}
     <div>
       <div class="footer-col-title">Contact</div>
       <ul class="footer-links">
-        <li><a href="tel:2038160678">(203) 816-0678</a></li>
+        <li><a href="tel:+12038160678">(203) 816-0678</a></li>
         <li><a href="mailto:Fixmytechct@gmail.com">Fixmytechct@gmail.com</a></li>
         <li><a href="#how">How It Works</a></li>
         <li><a href="#plans">Monthly Plans</a></li>
-        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#about">Why Us</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
-    <p>© 2026 <strong style="color:var(--cyan)">Fix My Tech CT</strong> — Local Tech Support for Fairfield County CT & Westchester NY. All rights reserved. <a href="tel:2038160678">(203) 816-0678</a></p>
+    <p>© 2026 <strong style="color:var(--cyan)">Fix My Tech CT</strong> — Local Tech Support for Fairfield County CT & Westchester NY. All rights reserved. <a href="tel:+12038160678">(203) 816-0678</a></p>
   </div>
 </footer>
+
+<div class="mobile-bar">
+  <a href="tel:+12038160678" class="mb-call">📞 Call</a>
+  <a href="sms:+12038160678" class="mb-text">💬 Text</a>
+</div>
 
 <script>
 async function handleSubmit(e){
