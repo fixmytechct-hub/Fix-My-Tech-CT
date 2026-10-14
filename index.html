@@ -254,6 +254,15 @@ section{padding:80px 5%}
     emailjs.init({publicKey: "Z6LPEhl-4DqAXmm8T"});
   })();
 </script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RT05Z5212G"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RT05Z5212G');
+</script>
 </head>
 <body>
 
@@ -718,6 +727,7 @@ async function handleSubmit(e){
 
   try {
     await emailjs.send('service_88bstvp', 'template_u74jii7', templateParams);
+    if (window.gtag) gtag('event', 'generate_lead', {method: 'contact_form'});
     btn.textContent = 'Message Sent! We will call you soon.';
     btn.style.background = '#22c55e';
     form.reset();
@@ -747,6 +757,13 @@ function toggleMenu(){
     links.style.cssText = 'display:flex;flex-direction:column;position:fixed;top:68px;left:0;right:0;background:var(--navy);padding:24px 5%;gap:16px;border-bottom:1px solid rgba(0,180,216,0.15)';
   }
 }
+
+// Track call and text taps for ad reporting
+document.addEventListener('click', function(e){
+  const a = e.target.closest('a[href^="tel:"], a[href^="sms:"]');
+  if(!a || !window.gtag) return;
+  gtag('event', a.href.startsWith('tel:') ? 'click_to_call' : 'click_to_text', {link_url: a.href});
+});
 
 // Close mobile menu when clicking a link
 document.querySelectorAll('.nav-links a').forEach(link => {
