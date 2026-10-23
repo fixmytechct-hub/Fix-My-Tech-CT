@@ -20,7 +20,7 @@
   "url": "https://fixmytechct.com/",
   "image": "https://fixmytechct.com/dan.jpg",
   "telephone": "+12038160678",
-  "email": "support@fixmytechct.com",
+  "email": "Fixmytechct@gmail.com",
   "description": "Computer repair, virus removal, WiFi, printer and small business IT support in Stamford, Fairfield County CT and Westchester NY.",
   "areaServed": ["Stamford, CT", "Greenwich, CT", "Norwalk, CT", "Westport, CT", "Fairfield, CT", "Darien, CT", "New Canaan, CT", "Bridgeport, CT", "White Plains, NY", "Scarsdale, NY", "Yonkers, NY", "New Rochelle, NY"],
   "openingHoursSpecification": {
@@ -162,6 +162,8 @@ section{padding:80px 5%}
 .review-avatar{width:40px;height:40px;border-radius:50%;background:var(--cyan);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;color:var(--navy);flex-shrink:0}
 .review-name{font-size:14px;font-weight:700;color:var(--white)}
 .review-location{font-size:12px;color:var(--gray-text);margin-top:2px}
+.reviews-grid.two{grid-template-columns:repeat(2,1fr);max-width:920px;margin:0 auto}
+.review-source{font-size:12px;color:var(--gray-text);margin-top:2px}
 .reviews-cta{text-align:center;margin-top:40px}
 .reviews-cta p{color:var(--gray-mid);font-size:15px;margin-bottom:16px}
 
@@ -546,6 +548,43 @@ section{padding:80px 5%}
   </div>
 </section>
 
+<!-- REVIEWS -->
+<section class="reviews-bg" id="reviews">
+  <div class="section-inner">
+    <p class="section-label">Customer Reviews</p>
+    <h2 class="section-title">What customers say about Fix My Tech CT.</h2>
+    <p class="section-sub">Real reviews from real customers on Google.</p>
+    <div class="reviews-grid two">
+      <div class="review-card">
+        <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <p class="review-text">Dan set up my computer and did an impeccable job with the cable management. He worked quickly, made sure everything was running properly, and walked me through issues that could come up so I knew what to expect. Everything is neat, organized, and working great. Highly recommend Fix My Tech CT!</p>
+        <div class="review-author">
+          <div class="review-avatar">LF</div>
+          <div>
+            <div class="review-name">Lesly Fuentes</div>
+            <div class="review-source">Google review</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <p class="review-text">Daniel from Fix my Tech CT came promptly &amp; set up my computer effortlessly. He was very courteous, professional &amp; efficient. I am very satisfied with the service and I would highly recommend him. I will use his services again next time I need.</p>
+        <div class="review-author">
+          <div class="review-avatar">SP</div>
+          <div>
+            <div class="review-name">Seunghee Park</div>
+            <div class="review-source">Google review</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="reviews-cta">
+      <p>Had a good experience? A quick Google review helps a lot.</p>
+      <a href="https://g.page/r/CeSVxcWgmwAgEBI/review" target="_blank" rel="noopener" class="btn-primary">⭐ Leave a Google Review</a>
+    </div>
+  </div>
+</section>
+
 <!-- SERVICE AREAS -->
 <section class="areas-bg">
   <div class="section-inner">
@@ -588,7 +627,7 @@ section{padding:80px 5%}
           <div class="contact-icon">📧</div>
           <div>
             <div class="contact-item-label">Email</div>
-            <div class="contact-item-value"><a href="mailto:support@fixmytechct.com">support@fixmytechct.com</a></div>
+            <div class="contact-item-value"><a href="mailto:Fixmytechct@gmail.com">Fixmytechct@gmail.com</a></div>
           </div>
         </div>
         <div class="contact-item">
@@ -687,7 +726,7 @@ section{padding:80px 5%}
       <div class="footer-col-title">Contact</div>
       <ul class="footer-links">
         <li><a href="tel:+12038160678">(203) 816-0678</a></li>
-        <li><a href="mailto:support@fixmytechct.com">support@fixmytechct.com</a></li>
+        <li><a href="mailto:Fixmytechct@gmail.com">Fixmytechct@gmail.com</a></li>
         <li><a href="#how">How It Works</a></li>
         <li><a href="#plans">Monthly Plans</a></li>
         <li><a href="#about">Why Us</a></li>
@@ -722,7 +761,7 @@ async function handleSubmit(e){
     message: formData.get('message') || 'No additional details provided',
     name: formData.get('first_name') + ' ' + formData.get('last_name'),
     from_name: formData.get('first_name') + ' ' + formData.get('last_name'),
-    to_email: 'support@fixmytechct.com'
+    to_email: 'Fixmytechct@gmail.com'
   };
 
   try {
