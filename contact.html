@@ -41,13 +41,17 @@
 <nav>
   <a href="index.html" class="nav-logo">Fix My <span>Tech</span> CT</a>
   <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="services.html">Services</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="contact.html" class="nav-current">Contact</a></li>
-    <li><a href="faq/">FAQ</a></li>
-    <li><a href="tel:+12038160678" class="nav-cta">📞 Call Now</a></li>
+    <li><a href="index.html" data-es="Inicio">Home</a></li>
+    <li><a href="services.html" data-es="Servicios">Services</a></li>
+    <li><a href="about.html" data-es="Acerca de">About</a></li>
+    <li><a href="contact.html" class="nav-current" data-es="Contacto">Contact</a></li>
+    <li><a href="faq/" data-es="Preguntas">FAQ</a></li>
+    <li><a href="tel:+12038160678" class="nav-cta" data-es="📞 Llama Ahora">📞 Call Now</a></li>
   </ul>
+  <div class="lang-toggle" role="group" aria-label="Language / Idioma">
+    <button type="button" data-lang="en" aria-pressed="true">EN</button>
+    <button type="button" data-lang="es" aria-pressed="false">ES</button>
+  </div>
   <div class="nav-hamburger" onclick="toggleMenu()" aria-label="Open menu">
     <span></span><span></span><span></span>
   </div>
@@ -55,11 +59,11 @@
 
 <header class="page-hero">
   <div class="page-hero-inner">
-    <p class="page-hero-eyebrow">Contact</p>
-    <h1>Talk to a Real Person</h1>
-    <p>Call or text and Dan answers. No call centers, no bots, no runaround. Tell us what is going on, and we will give you an upfront price before any work starts.</p>
-    <a href="tel:+12038160678" class="btn-primary">📞 Call (203) 816-0678</a>
-    <a href="sms:+12038160678" class="btn-outline">💬 Text Us</a>
+    <p class="page-hero-eyebrow" data-es="Contacto">Contact</p>
+    <h1 data-es="Habla con una Persona Real">Talk to a Real Person</h1>
+    <p data-es="Llama o envía un mensaje y Dan contesta. Sin centros de llamadas, sin bots, sin vueltas. Cuéntanos qué pasa y te daremos un precio antes de comenzar cualquier trabajo.">Call or text and Dan answers. No call centers, no bots, no runaround. Tell us what is going on, and we will give you an upfront price before any work starts.</p>
+    <a href="tel:+12038160678" class="btn-primary" data-es="📞 Llama al (203) 816-0678">📞 Call (203) 816-0678</a>
+    <a href="sms:+12038160678" class="btn-outline" data-es="💬 Envíanos un Mensaje">💬 Text Us</a>
   </div>
 </header>
 
@@ -67,43 +71,43 @@
   <div class="section-inner">
     <div class="contact-grid">
       <div>
-        <p class="section-label">Get in Touch</p>
-        <h2 class="section-title">We respond same day.</h2>
-        <p class="section-sub" style="margin-bottom:36px">Usually within the hour. Pick the easiest way to reach us.</p>
+        <p class="section-label" data-es="Ponte en Contacto">Get in Touch</p>
+        <h2 class="section-title" data-es="Respondemos el mismo día.">We respond same day.</h2>
+        <p class="section-sub" style="margin-bottom:36px" data-es="Generalmente en menos de una hora. Elige la forma más fácil de contactarnos.">Usually within the hour. Pick the easiest way to reach us.</p>
         <div class="contact-info">
           <div class="contact-item">
             <div class="contact-icon">📞</div>
             <div>
-              <div class="contact-item-label">Call or Text</div>
+              <div class="contact-item-label" data-es="Llama o Envía un Mensaje">Call or Text</div>
               <div class="contact-item-value"><a href="tel:+12038160678">(203) 816-0678</a></div>
             </div>
           </div>
           <div class="contact-item">
             <div class="contact-icon">✉️</div>
             <div>
-              <div class="contact-item-label">Email</div>
+              <div class="contact-item-label" data-es="Correo">Email</div>
               <div class="contact-item-value"><a href="mailto:Fixmytechct@gmail.com">Fixmytechct@gmail.com</a></div>
             </div>
           </div>
           <div class="contact-item">
             <div class="contact-icon">📍</div>
             <div>
-              <div class="contact-item-label">Service Area</div>
-              <div class="contact-item-value">Fairfield County, CT &amp; Westchester, NY</div>
+              <div class="contact-item-label" data-es="Zona de Servicio">Service Area</div>
+              <div class="contact-item-value" data-es="Condado de Fairfield, CT y Westchester, NY">Fairfield County, CT &amp; Westchester, NY</div>
             </div>
           </div>
           <div class="contact-item">
             <div class="contact-icon">🕘</div>
             <div>
-              <div class="contact-item-label">Hours</div>
-              <div class="contact-item-value">Mon–Sat, 9am–7pm</div>
+              <div class="contact-item-label" data-es="Horarios">Hours</div>
+              <div class="contact-item-value" data-es="Lun–Sáb, 9am–7pm">Mon–Sat, 9am–7pm</div>
             </div>
           </div>
           <div class="contact-item">
             <div class="contact-icon">⚡</div>
             <div>
-              <div class="contact-item-label">Response Time</div>
-              <div class="contact-item-value">Same day, usually within the hour</div>
+              <div class="contact-item-label" data-es="Tiempo de Respuesta">Response Time</div>
+              <div class="contact-item-value" data-es="Mismo día, generalmente en menos de una hora">Same day, usually within the hour</div>
             </div>
           </div>
         </div>
@@ -112,44 +116,44 @@
         <form class="contact-form" id="contactForm" onsubmit="handleSubmit(event)">
           <div class="form-row">
             <div class="form-group">
-              <label>First Name</label>
-              <input type="text" name="first_name" placeholder="John" required>
+              <label data-es="Nombre">First Name</label>
+              <input type="text" name="first_name" placeholder="John" data-es-placeholder="Juan" required>
             </div>
             <div class="form-group">
-              <label>Last Name</label>
-              <input type="text" name="last_name" placeholder="Smith" required>
+              <label data-es="Apellido">Last Name</label>
+              <input type="text" name="last_name" placeholder="Smith" data-es-placeholder="García" required>
             </div>
           </div>
           <div class="form-group">
-            <label>Phone Number</label>
+            <label data-es="Número de Teléfono">Phone Number</label>
             <input type="tel" name="phone" placeholder="(203) 555-0000" required>
           </div>
           <div class="form-group">
-            <label>What do you need help with?</label>
+            <label data-es="¿En qué podemos ayudarte?">What do you need help with?</label>
             <select name="service" required>
-              <option value="">Select a service...</option>
-              <option>Computer Tune-Up</option>
-              <option>Virus Removal</option>
-              <option>WiFi Setup or Troubleshooting</option>
-              <option>New Device Setup</option>
-              <option>Printer Setup</option>
-              <option>Phone or Tablet</option>
-              <option>Smart TV Setup</option>
-              <option>Data Recovery</option>
-              <option>Custom PC Build</option>
-              <option>GPU Cleaning / Maintenance</option>
-              <option>Password Recovery</option>
-              <option>Small Business IT</option>
-              <option>Monthly Support Plan</option>
-              <option>Something Else</option>
+              <option value="" data-es="Selecciona un servicio...">Select a service...</option>
+              <option data-es="Afinamiento de Computadora">Computer Tune-Up</option>
+              <option data-es="Eliminación de Virus">Virus Removal</option>
+              <option data-es="Configuración o Solución de WiFi">WiFi Setup or Troubleshooting</option>
+              <option data-es="Configuración de Nuevo Equipo">New Device Setup</option>
+              <option data-es="Configuración de Impresora">Printer Setup</option>
+              <option data-es="Teléfono o Tablet">Phone or Tablet</option>
+              <option data-es="Configuración de TV Inteligente">Smart TV Setup</option>
+              <option data-es="Recuperación de Datos">Data Recovery</option>
+              <option data-es="Armado de PC a Medida">Custom PC Build</option>
+              <option data-es="Limpieza y Mantenimiento de GPU">GPU Cleaning / Maintenance</option>
+              <option data-es="Recuperación de Contraseña">Password Recovery</option>
+              <option data-es="TI para Pequeños Negocios">Small Business IT</option>
+              <option data-es="Plan de Soporte Mensual">Monthly Support Plan</option>
+              <option data-es="Algo Más">Something Else</option>
             </select>
           </div>
           <div class="form-group">
-            <label>Tell me more (optional)</label>
-            <textarea name="message" placeholder="What is going on with your device?"></textarea>
+            <label data-es="Cuéntame más (opcional)">Tell me more (optional)</label>
+            <textarea name="message" placeholder="What is going on with your device?" data-es-placeholder="¿Qué le pasa a tu dispositivo?"></textarea>
           </div>
-          <button type="submit" class="form-submit" id="submitBtn">Send Message</button>
-          <div class="form-note">Prefer to talk? Call or text (203) 816-0678 and Dan will answer.</div>
+          <button type="submit" class="form-submit" id="submitBtn" data-es="Enviar Mensaje">Send Message</button>
+          <div class="form-note" data-es="¿Prefieres hablar? Llama o envía un mensaje al (203) 816-0678 y Dan contestará.">Prefer to talk? Call or text (203) 816-0678 and Dan will answer.</div>
         </form>
       </div>
     </div>
@@ -157,9 +161,9 @@
 </section>
 <section class="areas-bg">
   <div class="section-inner">
-    <p class="section-label">Service Areas</p>
-    <h2 class="section-title">Where We Work</h2>
-    <p class="section-sub">On-site throughout Fairfield County, CT and Westchester, NY. Remote support available anywhere.</p>
+    <p class="section-label" data-es="Zonas de Servicio">Service Areas</p>
+    <h2 class="section-title" data-es="Dónde Trabajamos">Where We Work</h2>
+    <p class="section-sub" data-es="En persona en todo el Condado de Fairfield, CT y Westchester, NY. Soporte remoto disponible en cualquier lugar.">On-site throughout Fairfield County, CT and Westchester, NY. Remote support available anywhere.</p>
     <div class="areas-grid">
       <a href="stamford.html" class="area-pill">Stamford, CT</a>
       <a href="greenwich.html" class="area-pill">Greenwich, CT</a>
@@ -181,40 +185,43 @@
   <div class="footer-grid">
     <div class="footer-brand">
       <a href="index.html" class="nav-logo">Fix My <span>Tech</span> CT</a>
-      <p>Computer, phone, WiFi &amp; printer repair for homes and small businesses. Bilingual English / Spanish. No fix, no charge.</p>
+      <p data-es="Reparación de computadoras, teléfonos, WiFi e impresoras para hogares y pequeños negocios. Bilingüe inglés / español. Si no lo arreglamos, no pagas.">Computer, phone, WiFi &amp; printer repair for homes and small businesses. Bilingual English / Spanish. No fix, no charge.</p>
     </div>
     <div>
-      <div class="footer-col-title">Services</div>
+      <div class="footer-col-title" data-es="Servicios">Services</div>
       <ul class="footer-links">
-        <li><a href="services.html">Services &amp; Pricing</a></li>
-        <li><a href="index.html#how">How It Works</a></li>
-        <li><a href="index.html#plans">Monthly Plans</a></li>
-        <li><a href="faq/">FAQ</a></li>
+        <li><a href="services.html" data-es="Servicios y Precios">Services &amp; Pricing</a></li>
+        <li><a href="index.html#how" data-es="Cómo Funciona">How It Works</a></li>
+        <li><a href="index.html#plans" data-es="Planes Mensuales">Monthly Plans</a></li>
+        <li><a href="faq/" data-es="Preguntas">FAQ</a></li>
       </ul>
     </div>
     <div>
-      <div class="footer-col-title">Company</div>
+      <div class="footer-col-title" data-es="Empresa">Company</div>
       <ul class="footer-links">
-        <li><a href="about.html">About Dan</a></li>
-        <li><a href="index.html#reviews">Reviews</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="index.html#areas">Service Areas</a></li>
+        <li><a href="about.html" data-es="Sobre Dan">About Dan</a></li>
+        <li><a href="index.html#reviews" data-es="Opiniones">Reviews</a></li>
+        <li><a href="contact.html" data-es="Contacto">Contact</a></li>
+        <li><a href="index.html#areas" data-es="Zonas de Servicio">Service Areas</a></li>
       </ul>
     </div>
     <div>
-      <div class="footer-col-title">Contact</div>
+      <div class="footer-col-title" data-es="Contacto">Contact</div>
       <ul class="footer-links">
         <li><a href="tel:+12038160678">(203) 816-0678</a></li>
         <li><a href="mailto:Fixmytechct@gmail.com">Fixmytechct@gmail.com</a></li>
-        <li><a href="contact.html">Fairfield County, CT</a></li>
+        <li><a href="contact.html" data-es="Condado de Fairfield, CT">Fairfield County, CT</a></li>
         <li><a href="contact.html">Westchester, NY</a></li>
       </ul>
     </div>
   </div>
-  <div class="footer-bottom">© 2026 Fix My Tech CT · All rights reserved. <a href="contact.html">Get in touch</a></div>
+  <div class="footer-bottom" data-es="© 2026 Fix My Tech CT · Todos los derechos reservados. <a href=&quot;contact.html&quot;>Contáctanos</a>" data-html>© 2026 Fix My Tech CT · All rights reserved. <a href="contact.html">Get in touch</a></div>
 </footer>
 
-<div class="mobile-bar">
+<div class="mobile-bar" data-es="
+  <a href=&quot;tel:+12038160678&quot; class=&quot;mb-call&quot;>📞 Llama Ahora</a>
+  <a href=&quot;sms:+12038160678&quot; class=&quot;mb-text&quot;>💬 Envíanos un Mensaje</a>
+" data-html>
   <a href="tel:+12038160678" class="mb-call">📞 Call Now</a>
   <a href="sms:+12038160678" class="mb-text">💬 Text Us</a>
 </div>
@@ -225,8 +232,9 @@ emailjs.init({publicKey: "Z6LPEhl-4DqAXmm8T"});
 
 async function handleSubmit(e){
   e.preventDefault();
+  const es = document.documentElement.lang === 'es';
   const btn = document.getElementById('submitBtn');
-  btn.textContent = 'Sending...';
+  btn.textContent = es ? 'Enviando...' : 'Sending...';
   btn.disabled = true;
 
   const form = document.getElementById('contactForm');
@@ -246,22 +254,22 @@ async function handleSubmit(e){
   try {
     await emailjs.send('service_88bstvp', 'template_u74jii7', templateParams);
     if (window.gtag) gtag('event', 'generate_lead', {method: 'contact_form'});
-    btn.textContent = 'Message Sent! We will call you soon.';
+    btn.textContent = es ? '¡Mensaje enviado! Te llamaremos pronto.' : 'Message Sent! We will call you soon.';
     btn.style.background = '#22c55e';
     form.reset();
     setTimeout(() => {
-      btn.textContent = 'Send Message';
+      btn.textContent = (document.documentElement.lang === 'es') ? 'Enviar Mensaje' : 'Send Message';
       btn.style.background = '';
       btn.disabled = false;
     }, 4000);
   } catch(error) {
     console.error('EmailJS error:', error);
     const code = (error && error.status) ? ' (error ' + error.status + ')' : '';
-    btn.textContent = 'Something went wrong' + code + '. Please call (203) 816-0678.';
+    btn.textContent = es ? ('Algo salió mal' + code + '. Por favor llama al (203) 816-0678.') : ('Something went wrong' + code + '. Please call (203) 816-0678.');
     btn.style.background = '#ef4444';
     btn.disabled = false;
     setTimeout(() => {
-      btn.textContent = 'Send Message';
+      btn.textContent = (document.documentElement.lang === 'es') ? 'Enviar Mensaje' : 'Send Message';
       btn.style.background = '';
     }, 8000);
   }
@@ -278,5 +286,6 @@ document.querySelectorAll('.nav-links a').forEach(function(a){
   });
 });
 </script>
+<script src="lang.js"></script>
 </body>
 </html>

@@ -40,13 +40,17 @@
 <nav>
   <a href="index.html" class="nav-logo">Fix My <span>Tech</span> CT</a>
   <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="services.html">Services</a></li>
-    <li><a href="about.html" class="nav-current">About</a></li>
-    <li><a href="contact.html">Contact</a></li>
-    <li><a href="faq/">FAQ</a></li>
-    <li><a href="tel:+12038160678" class="nav-cta">📞 Call Now</a></li>
+    <li><a href="index.html" data-es="Inicio">Home</a></li>
+    <li><a href="services.html" data-es="Servicios">Services</a></li>
+    <li><a href="about.html" class="nav-current" data-es="Acerca de">About</a></li>
+    <li><a href="contact.html" data-es="Contacto">Contact</a></li>
+    <li><a href="faq/" data-es="Preguntas">FAQ</a></li>
+    <li><a href="tel:+12038160678" class="nav-cta" data-es="📞 Llama Ahora">📞 Call Now</a></li>
   </ul>
+  <div class="lang-toggle" role="group" aria-label="Language / Idioma">
+    <button type="button" data-lang="en" aria-pressed="true">EN</button>
+    <button type="button" data-lang="es" aria-pressed="false">ES</button>
+  </div>
   <div class="nav-hamburger" onclick="toggleMenu()" aria-label="Open menu">
     <span></span><span></span><span></span>
   </div>
@@ -54,11 +58,11 @@
 
 <header class="page-hero">
   <div class="page-hero-inner">
-    <p class="page-hero-eyebrow">About</p>
-    <h1>Hi, I'm Dan.</h1>
-    <p>I fix computers, phones, WiFi, and printers for homes and small businesses. After fixing them, I show you what was wrong, so you can know what to do next time.</p>
-    <a href="contact.html" class="btn-primary">Work With Me</a>
-    <a href="tel:+12038160678" class="btn-outline">📞 Call (203) 816-0678</a>
+    <p class="page-hero-eyebrow" data-es="Acerca de">About</p>
+    <h1 data-es="Hola, soy Dan.">Hi, I'm Dan.</h1>
+    <p data-es="Reparo computadoras, teléfonos, WiFi e impresoras para hogares y pequeños negocios. Después de repararlos, te muestro qué falló para que sepas qué hacer la próxima vez.">I fix computers, phones, WiFi, and printers for homes and small businesses. After fixing them, I show you what was wrong, so you can know what to do next time.</p>
+    <a href="contact.html" class="btn-primary" data-es="Trabaja Conmigo">Work With Me</a>
+    <a href="tel:+12038160678" class="btn-outline" data-es="📞 Llama al (203) 816-0678">📞 Call (203) 816-0678</a>
   </div>
 </header>
 
@@ -66,40 +70,40 @@
   <div class="section-inner about-grid">
     <img src="dan.jpg" alt="Dan, owner of Fix My Tech CT" class="about-photo" loading="lazy">
     <div>
-      <p class="section-label">Who I Am</p>
-      <h2 class="section-title">A Local Tech You Can Actually Reach</h2>
-      <p class="about-text">Fix My Tech CT is a small local IT shop serving Fairfield County, CT and Westchester, NY. When you call, you do not get a call center. You get me. No phone trees, no ticket numbers, no "your call is important to us."</p>
-      <p class="about-text">I am CompTIA A+ certified and work in English and Spanish. Every job starts with an upfront flat-rate quote that you approve before any work begins, and if we cannot fix it, you do not pay.</p>
-      <p class="about-text">My favorite part of the job is the teaching. After every repair I walk you through what happened and show you a few things, so it does not happen again and you are never left in the dark.</p>
+      <p class="section-label" data-es="Quién Soy">Who I Am</p>
+      <h2 class="section-title" data-es="Un Técnico Local al Que Sí Puedes Contactar">A Local Tech You Can Actually Reach</h2>
+      <p class="about-text" data-es="Fix My Tech CT es un pequeño taller local de TI que atiende el Condado de Fairfield, CT y Westchester, NY. Cuando llamas, no te contesta un centro de llamadas. Te contesto yo. Sin menús telefónicos, sin números de ticket, sin &quot;su llamada es importante para nosotros&quot;.">Fix My Tech CT is a small local IT shop serving Fairfield County, CT and Westchester, NY. When you call, you do not get a call center. You get me. No phone trees, no ticket numbers, no "your call is important to us."</p>
+      <p class="about-text" data-es="Soy técnico certificado CompTIA A+ y trabajo en inglés y español. Cada trabajo empieza con una cotización de precio fijo que apruebas antes de comenzar, y si no podemos arreglarlo, no pagas.">I am CompTIA A+ certified and work in English and Spanish. Every job starts with an upfront flat-rate quote that you approve before any work begins, and if we cannot fix it, you do not pay.</p>
+      <p class="about-text" data-es="Lo que más me gusta de mi trabajo es enseñar. Después de cada reparación te explico lo que pasó y te muestro algunas cosas, para que no vuelva a ocurrir y nunca te quedes sin saber.">My favorite part of the job is the teaching. After every repair I walk you through what happened and show you a few things, so it does not happen again and you are never left in the dark.</p>
       <div class="about-badges">
-        <span class="about-badge">🏅 CompTIA A+ Certified</span>
-        <span class="about-badge">🌎 English &amp; Spanish</span>
-        <span class="about-badge">✅ No Fix, No Charge</span>
+        <span class="about-badge" data-es="🏅 Certificado CompTIA A+">🏅 CompTIA A+ Certified</span>
+        <span class="about-badge" data-es="🌎 Inglés y Español">🌎 English &amp; Spanish</span>
+        <span class="about-badge" data-es="✅ Si No Se Arregla, No Pagas">✅ No Fix, No Charge</span>
       </div>
     </div>
   </div>
 </section>
 <section class="section-alt">
   <div class="section-inner">
-    <p class="section-label">Why Work With Me</p>
-    <h2 class="section-title">The Difference, In Six Points</h2>
-    <p class="section-sub">This is how I run the business. It is also why my clients keep coming back.</p>
+    <p class="section-label" data-es="Por Qué Trabajar Conmigo">Why Work With Me</p>
+    <h2 class="section-title" data-es="La Diferencia, en Seis Puntos">The Difference, In Six Points</h2>
+    <p class="section-sub" data-es="Así manejo mi negocio. También es la razón por la que mis clientes siguen regresando.">This is how I run the business. It is also why my clients keep coming back.</p>
     <div class="why-grid">
-      <div class="why-item"><div class="why-icon">🎓</div><div class="why-title">We Teach While We Fix</div><div class="why-desc">Every visit includes a walkthrough of what we did and why. You are not left in the dark after we leave.</div></div>
-      <div class="why-item"><div class="why-icon">🌎</div><div class="why-title">Bilingual Support</div><div class="why-desc">Fully bilingual in English and Spanish. Tech support in the language you are most comfortable with.</div></div>
-      <div class="why-item"><div class="why-icon">📋</div><div class="why-title">Flat Rate Pricing</div><div class="why-desc">You know the price before we start. No surprises, no hidden fees, no hourly uncertainty.</div></div>
-      <div class="why-item"><div class="why-icon">🏅</div><div class="why-title">CompTIA A+ Certified</div><div class="why-desc">Professionally certified, with hands-on experience building, repairing and troubleshooting PCs and networks.</div></div>
-      <div class="why-item"><div class="why-icon">📞</div><div class="why-title">A Real Person Answers</div><div class="why-desc">Call or text (203) 816-0678 and Dan answers. No call centers, no bots, no runaround ever.</div></div>
-      <div class="why-item"><div class="why-icon">✅</div><div class="why-title">No Fix, No Charge</div><div class="why-desc">If we cannot fix it, you do not pay. Simple as that. Zero risk to try us.</div></div>
+      <div class="why-item"><div class="why-icon">🎓</div><div class="why-title" data-es="Enseñamos Mientras Reparamos">We Teach While We Fix</div><div class="why-desc" data-es="Cada visita incluye una explicación de lo que hicimos y por qué. No te quedas sin saber después de que nos vamos.">Every visit includes a walkthrough of what we did and why. You are not left in the dark after we leave.</div></div>
+      <div class="why-item"><div class="why-icon">🌎</div><div class="why-title" data-es="Soporte Bilingüe">Bilingual Support</div><div class="why-desc" data-es="Totalmente bilingüe en inglés y español. Soporte técnico en el idioma con el que te sientas más cómodo.">Fully bilingual in English and Spanish. Tech support in the language you are most comfortable with.</div></div>
+      <div class="why-item"><div class="why-icon">📋</div><div class="why-title" data-es="Precio Fijo">Flat Rate Pricing</div><div class="why-desc" data-es="Sabes el precio antes de empezar. Sin sorpresas, sin cargos ocultos, sin incertidumbre por hora.">You know the price before we start. No surprises, no hidden fees, no hourly uncertainty.</div></div>
+      <div class="why-item"><div class="why-icon">🏅</div><div class="why-title" data-es="Certificado CompTIA A+">CompTIA A+ Certified</div><div class="why-desc" data-es="Certificado profesionalmente, con experiencia práctica armando, reparando y diagnosticando PCs y redes.">Professionally certified, with hands-on experience building, repairing and troubleshooting PCs and networks.</div></div>
+      <div class="why-item"><div class="why-icon">📞</div><div class="why-title" data-es="Una Persona Real Contesta">A Real Person Answers</div><div class="why-desc" data-es="Llama o envía un mensaje al (203) 816-0678 y Dan contesta. Sin centros de llamadas, sin bots, sin vueltas.">Call or text (203) 816-0678 and Dan answers. No call centers, no bots, no runaround ever.</div></div>
+      <div class="why-item"><div class="why-icon">✅</div><div class="why-title" data-es="Si No Se Arregla, No Pagas">No Fix, No Charge</div><div class="why-desc" data-es="Si no podemos arreglarlo, no pagas. Así de simple. Cero riesgo en probarnos.">If we cannot fix it, you do not pay. Simple as that. Zero risk to try us.</div></div>
     </div>
   </div>
 </section>
 
 <section class="contact-bg" style="text-align:center">
   <div class="section-inner" style="margin-bottom:0">
-    <h2 class="section-title">Let's Get Your Tech Sorted</h2>
-    <p style="color:var(--gray-mid);font-size:16px;max-width:520px;margin:0 auto 28px;line-height:1.7">Call or text now and we will get you an upfront price before any work begins. Remote or on-site. You choose.</p>
-    <a href="tel:+12038160678" class="btn-primary">📞 Call (203) 816-0678</a>
+    <h2 class="section-title" data-es="Pongamos Tu Tecnología en Orden">Let's Get Your Tech Sorted</h2>
+    <p style="color:var(--gray-mid);font-size:16px;max-width:520px;margin:0 auto 28px;line-height:1.7" data-es="Llama o envía un mensaje ahora y te daremos un precio antes de comenzar cualquier trabajo. Remoto o en persona. Tú eliges.">Call or text now and we will get you an upfront price before any work begins. Remote or on-site. You choose.</p>
+    <a href="tel:+12038160678" class="btn-primary" data-es="📞 Llama al (203) 816-0678">📞 Call (203) 816-0678</a>
   </div>
 </section>
 
@@ -107,40 +111,43 @@
   <div class="footer-grid">
     <div class="footer-brand">
       <a href="index.html" class="nav-logo">Fix My <span>Tech</span> CT</a>
-      <p>Computer, phone, WiFi &amp; printer repair for homes and small businesses. Bilingual English / Spanish. No fix, no charge.</p>
+      <p data-es="Reparación de computadoras, teléfonos, WiFi e impresoras para hogares y pequeños negocios. Bilingüe inglés / español. Si no lo arreglamos, no pagas.">Computer, phone, WiFi &amp; printer repair for homes and small businesses. Bilingual English / Spanish. No fix, no charge.</p>
     </div>
     <div>
-      <div class="footer-col-title">Services</div>
+      <div class="footer-col-title" data-es="Servicios">Services</div>
       <ul class="footer-links">
-        <li><a href="services.html">Services &amp; Pricing</a></li>
-        <li><a href="index.html#how">How It Works</a></li>
-        <li><a href="index.html#plans">Monthly Plans</a></li>
-        <li><a href="faq/">FAQ</a></li>
+        <li><a href="services.html" data-es="Servicios y Precios">Services &amp; Pricing</a></li>
+        <li><a href="index.html#how" data-es="Cómo Funciona">How It Works</a></li>
+        <li><a href="index.html#plans" data-es="Planes Mensuales">Monthly Plans</a></li>
+        <li><a href="faq/" data-es="Preguntas">FAQ</a></li>
       </ul>
     </div>
     <div>
-      <div class="footer-col-title">Company</div>
+      <div class="footer-col-title" data-es="Empresa">Company</div>
       <ul class="footer-links">
-        <li><a href="about.html">About Dan</a></li>
-        <li><a href="index.html#reviews">Reviews</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="index.html#areas">Service Areas</a></li>
+        <li><a href="about.html" data-es="Sobre Dan">About Dan</a></li>
+        <li><a href="index.html#reviews" data-es="Opiniones">Reviews</a></li>
+        <li><a href="contact.html" data-es="Contacto">Contact</a></li>
+        <li><a href="index.html#areas" data-es="Zonas de Servicio">Service Areas</a></li>
       </ul>
     </div>
     <div>
-      <div class="footer-col-title">Contact</div>
+      <div class="footer-col-title" data-es="Contacto">Contact</div>
       <ul class="footer-links">
         <li><a href="tel:+12038160678">(203) 816-0678</a></li>
         <li><a href="mailto:Fixmytechct@gmail.com">Fixmytechct@gmail.com</a></li>
-        <li><a href="contact.html">Fairfield County, CT</a></li>
+        <li><a href="contact.html" data-es="Condado de Fairfield, CT">Fairfield County, CT</a></li>
         <li><a href="contact.html">Westchester, NY</a></li>
       </ul>
     </div>
   </div>
-  <div class="footer-bottom">© 2026 Fix My Tech CT · All rights reserved. <a href="contact.html">Get in touch</a></div>
+  <div class="footer-bottom" data-es="© 2026 Fix My Tech CT · Todos los derechos reservados. <a href=&quot;contact.html&quot;>Contáctanos</a>" data-html>© 2026 Fix My Tech CT · All rights reserved. <a href="contact.html">Get in touch</a></div>
 </footer>
 
-<div class="mobile-bar">
+<div class="mobile-bar" data-es="
+  <a href=&quot;tel:+12038160678&quot; class=&quot;mb-call&quot;>📞 Llama Ahora</a>
+  <a href=&quot;sms:+12038160678&quot; class=&quot;mb-text&quot;>💬 Envíanos un Mensaje</a>
+" data-html>
   <a href="tel:+12038160678" class="mb-call">📞 Call Now</a>
   <a href="sms:+12038160678" class="mb-text">💬 Text Us</a>
 </div>
@@ -157,5 +164,6 @@ document.querySelectorAll('.nav-links a').forEach(function(a){
   });
 });
 </script>
+<script src="lang.js"></script>
 </body>
 </html>
