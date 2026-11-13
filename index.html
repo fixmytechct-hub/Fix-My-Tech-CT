@@ -21,7 +21,7 @@
   "image": "https://fixmytechct.com/dan.jpg",
   "telephone": "+12038160678",
   "email": "Fixmytechct@gmail.com",
-  "description": "Computer repair, virus removal, WiFi, printer and small business IT support in Stamford, Fairfield County CT and Westchester NY.",
+  "description": "Computer repair, virus removal, WiFi, printer, data recovery, custom PC builds and small business IT support in Stamford, Fairfield County CT and Westchester NY.",
   "areaServed": ["Stamford, CT", "Greenwich, CT", "Norwalk, CT", "Westport, CT", "Fairfield, CT", "Darien, CT", "New Canaan, CT", "Bridgeport, CT", "White Plains, NY", "Scarsdale, NY", "Yonkers, NY", "New Rochelle, NY"],
   "openingHoursSpecification": {
     "@type": "OpeningHoursSpecification",
@@ -62,6 +62,12 @@ nav{position:fixed;top:0;left:0;right:0;background:rgba(10,22,40,0.97);backdrop-
 .nav-cta:hover{opacity:0.88}
 .nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
 .nav-hamburger span{width:24px;height:2px;background:var(--white);border-radius:2px;transition:all 0.3s}
+
+/* LANGUAGE TOGGLE */
+.lang-toggle{display:inline-flex;border:1px solid rgba(0,180,216,0.35);border-radius:6px;overflow:hidden;margin-left:20px;flex-shrink:0}
+.lang-toggle button{background:none;border:0;color:var(--gray-mid);font-family:var(--font);font-size:12px;font-weight:700;letter-spacing:0.5px;padding:8px 12px;cursor:pointer;min-height:36px;transition:background 0.2s,color 0.2s}
+.lang-toggle button:hover{color:var(--cyan)}
+.lang-toggle button[aria-pressed="true"]{background:var(--cyan);color:var(--navy)}
 
 /* HERO */
 .hero{background:var(--navy);min-height:100vh;display:flex;align-items:center;padding:100px 5% 80px;position:relative;overflow:hidden}
@@ -162,10 +168,21 @@ section{padding:80px 5%}
 .review-avatar{width:40px;height:40px;border-radius:50%;background:var(--cyan);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;color:var(--navy);flex-shrink:0}
 .review-name{font-size:14px;font-weight:700;color:var(--white)}
 .review-location{font-size:12px;color:var(--gray-text);margin-top:2px}
-.reviews-grid.two{grid-template-columns:repeat(2,1fr);max-width:920px;margin:0 auto}
+.reviews-grid.two{grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
 .review-source{font-size:12px;color:var(--gray-text);margin-top:2px}
 .reviews-cta{text-align:center;margin-top:40px}
 .reviews-cta p{color:var(--gray-mid);font-size:15px;margin-bottom:16px}
+.reviews-grid.two{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.reviews-summary{display:flex;align-items:center;justify-content:center;gap:12px;margin:0 auto 36px;padding:10px 22px;width:fit-content;max-width:100%;background:rgba(255,255,255,0.06);border:1px solid rgba(0,180,216,0.25);border-radius:999px}
+.rs-stars{color:#FBBF24;font-size:18px;letter-spacing:2px}
+.rs-text{color:var(--white);font-size:14px;font-weight:600}
+.review-card{position:relative;display:flex;flex-direction:column;background:rgba(255,255,255,0.06);border:1px solid rgba(0,180,216,0.2);border-radius:16px;padding:30px 28px 24px;overflow:hidden}
+.review-card::before{content:'\201C';position:absolute;top:-8px;right:18px;font-size:120px;line-height:1;font-weight:900;color:var(--cyan);opacity:0.15;font-family:Georgia,serif;pointer-events:none}
+.review-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.review-stars{color:#FBBF24;margin-bottom:0;font-size:18px}
+.review-g{width:26px;height:26px;border-radius:50%;background:var(--white);color:#4285F4;font-weight:800;font-size:15px;display:flex;align-items:center;justify-content:center;font-family:Arial,sans-serif}
+.review-text{font-style:normal;color:#E2E8F0;font-size:15.5px;line-height:1.75;flex:1}
+.review-author{padding-top:16px;border-top:1px solid rgba(255,255,255,0.1)}
 
 /* WHY US */
 .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
@@ -235,6 +252,7 @@ section{padding:80px 5%}
   .plans-grid{grid-template-columns:1fr}
   .plan-card.featured{transform:none}
   .reviews-grid{grid-template-columns:1fr}
+  .reviews-grid.two{grid-template-columns:1fr}
   .why-grid{grid-template-columns:1fr 1fr}
   .contact-grid{grid-template-columns:1fr}
   .areas-grid{grid-template-columns:repeat(2,1fr)}
@@ -248,6 +266,13 @@ section{padding:80px 5%}
   .form-row{grid-template-columns:1fr}
   .stats-grid{grid-template-columns:repeat(2,1fr)}
   section{padding:60px 5%}
+  .reviews-grid.two{gap:10px}
+  .review-card{padding:22px 18px}
+  .review-stars{font-size:16px;letter-spacing:1px}
+  .review-text{font-size:14.5px;line-height:1.65;margin-bottom:16px;overflow-wrap:break-word}
+  .review-avatar{width:32px;height:32px;font-size:11px}
+  .review-name{font-size:12px}
+  .review-location,.review-source{font-size:10px}
 }
 </style>
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
@@ -272,13 +297,17 @@ section{padding:80px 5%}
 <nav>
   <a href="#" class="nav-logo">Fix My <span>Tech</span> CT</a>
   <ul class="nav-links">
-    <li><a href="#how">How It Works</a></li>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#plans">Plans</a></li>
-    <li><a href="#about">Why Us</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="tel:+12038160678" class="nav-cta">📞 Call Now</a></li>
+    <li><a href="#how" data-es="Cómo Funciona">How It Works</a></li>
+    <li><a href="#services" data-es="Servicios">Services</a></li>
+    <li><a href="#plans" data-es="Planes">Plans</a></li>
+    <li><a href="#about" data-es="Por Qué Elegirnos">Why Us</a></li>
+    <li><a href="#contact" data-es="Contacto">Contact</a></li>
+    <li><a href="tel:+120****0678" class="nav-cta" data-es="📞 Llamar Ahora">📞 Call Now</a></li>
   </ul>
+  <div class="lang-toggle" role="group" aria-label="Language / Idioma">
+    <button type="button" data-lang="en" aria-pressed="true">EN</button>
+    <button type="button" data-lang="es" aria-pressed="false">ES</button>
+  </div>
   <div class="nav-hamburger" onclick="toggleMenu()">
     <span></span><span></span><span></span>
   </div>
@@ -288,20 +317,20 @@ section{padding:80px 5%}
 <section class="hero">
   <div class="hero-layout">
     <div>
-      <p class="hero-eyebrow">Stamford CT · Fairfield County · Westchester NY</p>
+      <p class="hero-eyebrow" data-es="Stamford CT · Condado de Fairfield · Westchester NY">Stamford CT · Fairfield County · Westchester NY</p>
       <h1 class="hero-headline">
-        Computer Repair in <span class="cyan">Stamford &amp; Fairfield County</span>
+        <span data-html data-es="Reparación de Computadoras en <span class='cyan'>Stamford y el Condado de Fairfield</span>">Computer Repair in <span class="cyan">Stamford &amp; Fairfield County</span></span>
       </h1>
-      <p class="hero-sub">Hi, I'm Dan. I fix computers, phones, WiFi and printers for homes and small businesses, then show you what went wrong so you know what to do next time. Flat price, quoted before I start.</p>
+      <p class="hero-sub" data-es="Hola, soy Dan. Reparo computadoras, teléfonos, WiFi e impresoras para hogares y pequeños negocios, y luego te muestro qué falló para que sepas qué hacer la próxima vez. Precio fijo, cotizado antes de empezar.">Hi, I'm Dan. I fix computers, phones, WiFi and printers for homes and small businesses, then show you what went wrong so you know what to do next time. Flat price, quoted before I start.</p>
       <div class="hero-cta-group">
-        <a href="tel:+12038160678" class="btn-primary">📞 Call (203) 816-0678</a>
-        <a href="#services" class="btn-outline">See Services</a>
+        <a href="tel:+120****0678" class="btn-primary" data-es="📞 Llamar (203) 816-0678">📞 Call (203) 816-0678</a>
+        <a href="#services" class="btn-outline" data-es="Ver Servicios">See Services</a>
       </div>
       <div class="hero-badges">
-        <div class="badge"><div class="badge-dot"></div>CompTIA A+ Certified</div>
-        <div class="badge"><div class="badge-dot"></div>Se habla español</div>
-        <div class="badge"><div class="badge-dot"></div>Same-Day Response</div>
-        <div class="badge"><div class="badge-dot"></div>No Fix, No Charge</div>
+        <div class="badge"><div class="badge-dot"></div><span data-es="Certificación CompTIA A+">CompTIA A+ Certified</span></div>
+        <div class="badge"><div class="badge-dot"></div><span data-es="Se habla español">Se habla español</span></div>
+        <div class="badge"><div class="badge-dot"></div><span data-es="Respuesta el mismo día">Same-Day Response</span></div>
+        <div class="badge"><div class="badge-dot"></div><span data-es="Sin arreglo, sin cargo">No Fix, No Charge</span></div>
       </div>
     </div>
     <div class="hero-image-col">
@@ -310,8 +339,8 @@ section{padding:80px 5%}
         <div class="hero-img-badge">
           <div class="hero-img-badge-icon">🛠️</div>
           <div>
-            <div class="hero-img-badge-text">Dan, Owner &amp; Technician</div>
-            <div class="hero-img-badge-sub">CompTIA A+ Certified</div>
+            <div class="hero-img-badge-text" data-es="Dan, Propietario y Técnico">Dan, Owner &amp; Technician</div>
+            <div class="hero-img-badge-sub" data-es="Certificación CompTIA A+">CompTIA A+ Certified</div>
           </div>
         </div>
       </div>
@@ -324,19 +353,19 @@ section{padding:80px 5%}
   <div class="stats-grid">
     <div class="stat-item">
       <div class="stat-num">A+</div>
-      <div class="stat-label">CompTIA Certified</div>
+      <div class="stat-label" data-es="Certificación CompTIA">CompTIA Certified</div>
     </div>
     <div class="stat-item">
       <div class="stat-num">EN / ES</div>
-      <div class="stat-label">Bilingual Support</div>
+      <div class="stat-label" data-es="Atención bilingüe">Bilingual Support</div>
     </div>
     <div class="stat-item">
-      <div class="stat-num">Same Day</div>
-      <div class="stat-label">Response</div>
+      <div class="stat-num" data-es="Mismo Día">Same Day</div>
+      <div class="stat-label" data-es="Respuesta">Response</div>
     </div>
     <div class="stat-item">
       <div class="stat-num">$0</div>
-      <div class="stat-label">If We Can't Fix It</div>
+      <div class="stat-label" data-es="Si no podemos arreglarlo">If We Can't Fix It</div>
     </div>
   </div>
 </div>
@@ -344,27 +373,27 @@ section{padding:80px 5%}
 <!-- HOW IT WORKS -->
 <section class="how-bg" id="how">
   <div class="section-inner">
-    <p class="section-label">Simple Process</p>
-    <h2 class="section-title" style="color:var(--white)">Three Steps. Zero Stress.</h2>
-    <p class="section-sub">Getting your tech fixed has never been easier. Here is exactly how it works.</p>
+    <p class="section-label" data-es="Proceso Sencillo">Simple Process</p>
+    <h2 class="section-title" style="color:var(--white)" data-es="Tres pasos. Cero estrés.">Three Steps. Zero Stress.</h2>
+    <p class="section-sub" data-es="Reparar tu tecnología nunca había sido tan fácil. Así es exactamente como funciona.">Getting your tech fixed has never been easier. Here is exactly how it works.</p>
     <div class="how-grid">
       <div class="how-card">
         <div class="how-num">01</div>
         <div class="how-icon">📞</div>
-        <div class="how-title">Call or Text Us</div>
-        <div class="how-desc">Reach out anytime at (203) 816-0678. We will ask a few quick questions about what is going on and give you an upfront price before we start. No surprises.</div>
+        <div class="how-title" data-es="Llámanos o envíanos un mensaje">Call or Text Us</div>
+        <div class="how-desc" data-es="Contáctanos cuando quieras al (203) 816-0678. Te haremos algunas preguntas rápidas sobre lo que está pasando y te daremos un precio por adelantado antes de empezar. Sin sorpresas.">Reach out anytime at (203) 816-0678. We will ask a few quick questions about what is going on and give you an upfront price before we start. No surprises.</div>
       </div>
       <div class="how-card">
         <div class="how-num">02</div>
         <div class="how-icon">🔧</div>
-        <div class="how-title">We Fix It</div>
-        <div class="how-desc">Dan shows up on time and gets to work. Remote or on-site, we diagnose the problem and fix it fast. You watch, you learn, you understand exactly what happened.</div>
+        <div class="how-title" data-es="Lo arreglamos">We Fix It</div>
+        <div class="how-desc" data-es="Dan llega a tiempo y se pone a trabajar. Remoto o en persona, diagnosticamos el problema y lo arreglamos rápido. Tú observas, aprendes y entiendes exactamente qué pasó.">Dan shows up on time and gets to work. Remote or on-site, we diagnose the problem and fix it fast. You watch, you learn, you understand exactly what happened.</div>
       </div>
       <div class="how-card">
         <div class="how-num">03</div>
         <div class="how-icon">🎓</div>
-        <div class="how-title">We Teach You</div>
-        <div class="how-desc">Before we leave, we walk you through what we did and what to do if it happens again. You are not left in the dark. And our number stays in your phone for next time.</div>
+        <div class="how-title" data-es="Te enseñamos">We Teach You</div>
+        <div class="how-desc" data-es="Antes de irnos, te explicamos lo que hicimos y qué hacer si vuelve a pasar. No te dejamos en la oscuridad. Y nuestro número sigue en tu teléfono para la próxima vez.">Before we leave, we walk you through what we did and what to do if it happens again. You are not left in the dark. And our number stays in your phone for next time.</div>
       </div>
     </div>
   </div>
@@ -373,85 +402,97 @@ section{padding:80px 5%}
 <!-- SERVICES -->
 <section class="services-bg" id="services">
   <div class="section-inner">
-    <p class="section-label">What We Fix</p>
-    <h2 class="section-title">Services & Pricing</h2>
-    <p class="section-sub">Flat rate pricing. No hidden fees. You know the cost before we start.</p>
+    <p class="section-label" data-es="Qué Reparamos">What We Fix</p>
+    <h2 class="section-title" data-es="Servicios y Precios">Services &amp; Pricing</h2>
+    <p class="section-sub" data-es="Precios fijos. Sin cargos ocultos. Sabes el costo antes de empezar.">Flat rate pricing. No hidden fees. You know the cost before we start.</p>
 
     <div class="services-img-row">
       <div class="services-img-item">
         <img src="https://images.unsplash.com/photo-1587831990711-23ca6441447b?w=400&q=80" alt="Computer repair">
-        <span class="services-img-label">Computer Repair</span>
+        <span class="services-img-label" data-es="Reparación de Computadoras">Computer Repair</span>
       </div>
       <div class="services-img-item">
         <img src="https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=400&q=80" alt="WiFi setup">
-        <span class="services-img-label">WiFi & Networking</span>
+        <span class="services-img-label" data-es="WiFi y Redes">WiFi &amp; Networking</span>
       </div>
       <div class="services-img-item">
         <img src="https://images.unsplash.com/photo-1512054502232-10a0a035d672?w=400&q=80" alt="Phone setup">
-        <span class="services-img-label">Phone & Tablet</span>
+        <span class="services-img-label" data-es="Teléfonos y Tabletas">Phone &amp; Tablet</span>
       </div>
       <div class="services-img-item">
         <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&q=80" alt="Business IT">
-        <span class="services-img-label">Small Business IT</span>
+        <span class="services-img-label" data-es="TI para Pequeños Negocios">Small Business IT</span>
       </div>
     </div>
 
     <div class="service-group">
-      <div class="service-group-title">Home & Residential</div>
+      <div class="service-group-title" data-es="Hogar y Residencial">Home &amp; Residential</div>
       <div class="service-item">
-        <div><div class="service-name">Computer Tune-Up & Optimization</div><div class="service-desc">Speed up a slow computer, remove junk files, update software, and check system health</div></div>
+        <div><div class="service-name" data-es="Afinamiento y Optimización de Computadora">Computer Tune-Up &amp; Optimization</div><div class="service-desc" data-es="Acelera una computadora lenta, elimina archivos basura, actualiza software y revisa la salud del sistema">Speed up a slow computer, remove junk files, update software, and check system health</div></div>
         <div class="service-price">$75</div>
       </div>
       <div class="service-item">
-        <div><div class="service-name">Virus & Malware Removal</div><div class="service-desc">Full removal, browser cleanup, and prevention tips so it does not happen again</div></div>
+        <div><div class="service-name" data-es="Eliminación de Virus y Malware">Virus &amp; Malware Removal</div><div class="service-desc" data-es="Eliminación completa, limpieza del navegador y consejos de prevención para que no vuelva a pasar">Full removal, browser cleanup, and prevention tips so it does not happen again</div></div>
         <div class="service-price">$85</div>
       </div>
       <div class="service-item">
-        <div><div class="service-name">New Device Setup & Data Transfer</div><div class="service-desc">Unbox, connect, transfer files, install apps, and walk you through everything</div></div>
+        <div><div class="service-name" data-es="Configuración de Nuevo Equipo y Transferencia de Datos">New Device Setup &amp; Data Transfer</div><div class="service-desc" data-es="Desempaca, conecta, transfiere archivos, instala aplicaciones y te guía en todo el proceso">Unbox, connect, transfer files, install apps, and walk you through everything</div></div>
         <div class="service-price">$100</div>
       </div>
       <div class="service-item">
-        <div><div class="service-name">Home WiFi Setup & Troubleshooting</div><div class="service-desc">Router placement, device connections, dead spot fixes, and guest network setup</div></div>
+        <div><div class="service-name" data-es="Configuración y Solución de Problemas de WiFi en el Hogar">Home WiFi Setup &amp; Troubleshooting</div><div class="service-desc" data-es="Colocación del router, conexión de dispositivos, corrección de puntos muertos y configuración de red de invitados">Router placement, device connections, dead spot fixes, and guest network setup</div></div>
         <div class="service-price">$75</div>
       </div>
       <div class="service-item">
-        <div><div class="service-name">Printer Setup & Troubleshooting</div><div class="service-desc">Install drivers, connect wirelessly, test from all devices, and teach you to reconnect</div></div>
+        <div><div class="service-name" data-es="Configuración y Solución de Problemas de Impresora">Printer Setup &amp; Troubleshooting</div><div class="service-desc" data-es="Instala controladores, conecta sin cables, prueba desde todos los dispositivos y te enseña a reconectar">Install drivers, connect wirelessly, test from all devices, and teach you to reconnect</div></div>
         <div class="service-price">$60</div>
       </div>
       <div class="service-item">
-        <div><div class="service-name">Phone & Tablet Setup</div><div class="service-desc">iOS and Android, accounts, apps, and data transfer from old device</div></div>
+        <div><div class="service-name" data-es="Configuración de Teléfono y Tablet">Phone &amp; Tablet Setup</div><div class="service-desc" data-es="iOS y Android, cuentas, aplicaciones y transferencia de datos desde tu dispositivo anterior">iOS and Android, accounts, apps, and data transfer from old device</div></div>
         <div class="service-price">$50</div>
       </div>
       <div class="service-item">
-        <div><div class="service-name">Password Reset & Account Recovery</div><div class="service-desc">Recover access, set up a password manager, and enable two-factor authentication</div></div>
+        <div><div class="service-name" data-es="Restablecimiento de Contraseñas y Recuperación de Cuentas">Password Reset &amp; Account Recovery</div><div class="service-desc" data-es="Recupera el acceso, configura un administrador de contraseñas y habilita la autenticación de dos factores">Recover access, set up a password manager, and enable two-factor authentication</div></div>
         <div class="service-price">$50</div>
       </div>
       <div class="service-item">
-        <div><div class="service-name">Smart TV & Streaming Setup</div><div class="service-desc">Connect to WiFi, set up Netflix, Hulu, Disney+, pair remotes, and walk through features</div></div>
+        <div><div class="service-name" data-es="Configuración de TV Inteligente y Streaming">Smart TV &amp; Streaming Setup</div><div class="service-desc" data-es="Conecta a WiFi, configura Netflix, Hulu, Disney+, empareja controles remotos y recorre las funciones">Connect to WiFi, set up Netflix, Hulu, Disney+, pair remotes, and walk through features</div></div>
         <div class="service-price">$60</div>
+      </div>
+      <div class="service-item">
+        <div><div class="service-name" data-es="Recuperación de Datos">Data Recovery</div><div class="service-desc" data-es="Recupera fotos, archivos y videos de teléfonos, tarjetas de memoria, memorias USB y discos duros. El precio se cotiza después de revisar el dispositivo. La recuperación depende del daño y te digo qué es realista antes de que decidas.">Recover photos, files and videos from phones, memory cards, USB drives and hard drives. Price quoted after we look at the device. Recovery depends on the damage, and I tell you what is realistic before you decide.</div></div>
+        <div class="service-price" data-es="Cotización previa">Quoted first</div>
+      </div>
+      <div class="service-item">
+        <div><div class="service-name" data-es="Armado de PC a Medida">Custom PC Builds</div><div class="service-desc" data-es="Piezas elegidas para tu presupuesto y uso, armado, cableado ordenado, probado y listo para usar">Parts picked for your budget and how you use it, then built, cable-managed, tested and set up for you</div></div>
+        <div class="service-price" data-es="Cotización a medida">Custom quote</div>
+      </div>
+      <div class="service-item">
+        <div><div class="service-name" data-es="Limpieza y Mantenimiento de GPU">GPU Cleaning &amp; Maintenance</div><div class="service-desc" data-es="Limpieza de polvo, revisión de ventiladores, renovación de pasta térmica y prueba de temperaturas para tarjetas gráficas que se calientan o hacen ruido">Dust removal, fan check, thermal paste refresh and temperature testing for graphics cards that run hot or loud</div></div>
+        <div class="service-price" data-es="Cotización previa">Quoted first</div>
       </div>
     </div>
 
     <div class="service-group">
-      <div class="service-group-title">Small Business</div>
+      <div class="service-group-title" data-es="Pequeños Negocios">Small Business</div>
       <div class="service-item">
-        <div><div class="service-name">Microsoft 365 Setup</div><div class="service-desc">Business email, Outlook, Teams, OneDrive, SharePoint fully configured with staff training</div></div>
+        <div><div class="service-name" data-es="Configuración de Microsoft 365">Microsoft 365 Setup</div><div class="service-desc" data-es="Correo empresarial, Outlook, Teams, OneDrive y SharePoint configurados por completo, con capacitación para el personal">Business email, Outlook, Teams, OneDrive, SharePoint fully configured with staff training</div></div>
         <div class="service-price">$200</div>
       </div>
       <div class="service-item">
-        <div><div class="service-name">Office Network Setup</div><div class="service-desc">Router, switch, wired connections, secure WiFi, guest network, and full documentation</div></div>
+        <div><div class="service-name" data-es="Configuración de Red de Oficina">Office Network Setup</div><div class="service-desc" data-es="Router, conmutador, conexiones cableadas, WiFi segura, red de invitados y documentación completa">Router, switch, wired connections, secure WiFi, guest network, and full documentation</div></div>
         <div class="service-price">$200–$300</div>
       </div>
       <div class="service-item">
-        <div><div class="service-name">Workstation Setup</div><div class="service-desc">Setup, software install, network connection, user account, tested and ready</div></div>
+        <div><div class="service-name" data-es="Configuración de Estaciones de Trabajo">Workstation Setup</div><div class="service-desc" data-es="Configuración, instalación de software, conexión a red, cuenta de usuario, probado y listo">Setup, software install, network connection, user account, tested and ready</div></div>
         <div class="service-price">$150 each</div>
       </div>
       <div class="service-item">
-        <div><div class="service-name">Cybersecurity Checkup</div><div class="service-desc">Review antivirus, passwords, access controls, patch vulnerabilities, and get a written report</div></div>
+        <div><div class="service-name" data-es="Revisión de Ciberseguridad">Cybersecurity Checkup</div><div class="service-desc" data-es="Revisamos antivirus, contraseñas, controles de acceso, corregimos vulnerabilidades y te entregamos un informe escrito">Review antivirus, passwords, access controls, patch vulnerabilities, and get a written report</div></div>
         <div class="service-price">$150</div>
       </div>
       <div class="service-item">
-        <div><div class="service-name">Staff Tech Training</div><div class="service-desc">Microsoft 365, email safety, phishing awareness, and how to use your tools effectively</div></div>
+        <div><div class="service-name" data-es="Capacitación Tecnológica del Personal">Staff Tech Training</div><div class="service-desc" data-es="Microsoft 365, seguridad del correo, conciencia sobre phishing y cómo usar sus herramientas de forma efectiva">Microsoft 365, email safety, phishing awareness, and how to use your tools effectively</div></div>
         <div class="service-price">$125/hr</div>
       </div>
     </div>
@@ -461,47 +502,47 @@ section{padding:80px 5%}
 <!-- PLANS -->
 <section id="plans">
   <div class="section-inner">
-    <p class="section-label">Ongoing Support</p>
-    <h2 class="section-title">Monthly Support Plans</h2>
-    <p class="section-sub">Have a tech person on call every month. Flat rate, no surprise bills, cancel anytime.</p>
+    <p class="section-label" data-es="Soporte Continuo">Ongoing Support</p>
+    <h2 class="section-title" data-es="Planes de Soporte Mensual">Monthly Support Plans</h2>
+    <p class="section-sub" data-es="Ten a tu disposición un técnico cada mes. Tarifa fija, sin facturas sorpresa, cancela cuando quieras.">Have a tech person on call every month. Flat rate, no surprise bills, cancel anytime.</p>
     <div class="plans-grid">
       <div class="plan-card">
-        <div class="plan-name">BASIC</div>
+        <div class="plan-name" data-es="BÁSICO">BASIC</div>
         <div class="plan-price">$149</div>
-        <div class="plan-period">per month</div>
+        <div class="plan-period" data-es="por mes">per month</div>
         <ul class="plan-features">
-          <li>Remote support up to 2 hours</li>
-          <li>Monthly check-in call</li>
-          <li>Email and phone support</li>
-          <li>Response within 24 hours</li>
+          <li data-es="Soporte remoto de hasta 2 horas">Remote support up to 2 hours</li>
+          <li data-es="Llamada de seguimiento mensual">Monthly check-in call</li>
+          <li data-es="Soporte por correo y teléfono">Email and phone support</li>
+          <li data-es="Respuesta en menos de 24 horas">Response within 24 hours</li>
         </ul>
-        <a href="#contact" class="plan-cta">Get Started</a>
+        <a href="#contact" class="plan-cta" data-es="Comenzar">Get Started</a>
       </div>
       <div class="plan-card featured">
-        <div class="plan-badge">Most Popular</div>
-        <div class="plan-name">STANDARD</div>
+        <div class="plan-badge" data-es="Más Popular">Most Popular</div>
+        <div class="plan-name" data-es="ESTÁNDAR">STANDARD</div>
         <div class="plan-price">$249</div>
-        <div class="plan-period">per month</div>
+        <div class="plan-period" data-es="por mes">per month</div>
         <ul class="plan-features">
-          <li>Remote support up to 4 hours</li>
-          <li>One on-site visit per month</li>
-          <li>Microsoft 365 basic admin</li>
-          <li>Priority response within 4 hours</li>
+          <li data-es="Soporte remoto de hasta 4 horas">Remote support up to 4 hours</li>
+          <li data-es="Una visita en persona al mes">One on-site visit per month</li>
+          <li data-es="Administración básica de Microsoft 365">Microsoft 365 basic admin</li>
+          <li data-es="Respuesta prioritaria en menos de 4 horas">Priority response within 4 hours</li>
         </ul>
-        <a href="#contact" class="plan-cta">Get Started</a>
+        <a href="#contact" class="plan-cta" data-es="Comenzar">Get Started</a>
       </div>
       <div class="plan-card">
-        <div class="plan-name">PREMIUM</div>
+        <div class="plan-name" data-es="PREMIUM">PREMIUM</div>
         <div class="plan-price">$399</div>
-        <div class="plan-period">per month</div>
+        <div class="plan-period" data-es="por mes">per month</div>
         <ul class="plan-features">
-          <li>Unlimited remote support</li>
-          <li>Two on-site visits per month</li>
-          <li>Full Microsoft 365 admin</li>
-          <li>Response within 2 hours</li>
-          <li>User onboarding and offboarding</li>
+          <li data-es="Soporte remoto ilimitado">Unlimited remote support</li>
+          <li data-es="Dos visitas en persona al mes">Two on-site visits per month</li>
+          <li data-es="Administración completa de Microsoft 365">Full Microsoft 365 admin</li>
+          <li data-es="Respuesta en menos de 2 horas">Response within 2 hours</li>
+          <li data-es="Incorporación y separación de usuarios">User onboarding and offboarding</li>
         </ul>
-        <a href="#contact" class="plan-cta">Get Started</a>
+        <a href="#contact" class="plan-cta" data-es="Comenzar">Get Started</a>
       </div>
     </div>
   </div>
@@ -510,39 +551,39 @@ section{padding:80px 5%}
 <!-- WHY US -->
 <section id="about" style="border-top:1px solid var(--gray-mid)">
   <div class="section-inner">
-    <p class="section-label">Why Fix My Tech CT</p>
-    <h2 class="section-title">Tech help that actually helps.</h2>
-    <p class="section-sub">We do not just fix it and leave. We show you what happened and what to do next time.</p>
+    <p class="section-label" data-es="Por Qué Elegirnos">Why Fix My Tech CT</p>
+    <h2 class="section-title" data-es="Ayuda técnica que de verdad ayuda.">Tech help that actually helps.</h2>
+    <p class="section-sub" data-es="No solo lo arreglamos y nos vamos. Te mostramos qué pasó y qué hacer la próxima vez.">We do not just fix it and leave. We show you what happened and what to do next time.</p>
     <div class="why-grid">
       <div class="why-item">
         <div class="why-icon">🎓</div>
-        <div class="why-title">We Teach While We Fix</div>
-        <div class="why-desc">Every visit includes a walkthrough of what we did and why. You are not left in the dark after we leave.</div>
+        <div class="why-title" data-es="Te enseñamos mientras arreglamos">We Teach While We Fix</div>
+        <div class="why-desc" data-es="Cada visita incluye una explicación de lo que hicimos y por qué. No te dejamos en la oscuridad al irnos.">Every visit includes a walkthrough of what we did and why. You are not left in the dark after we leave.</div>
       </div>
       <div class="why-item">
         <div class="why-icon">🌎</div>
-        <div class="why-title">Bilingual Support</div>
-        <div class="why-desc">Fully bilingual in English and Spanish. Tech support in the language you are most comfortable with.</div>
+        <div class="why-title" data-es="Atención Bilingüe">Bilingual Support</div>
+        <div class="why-desc" data-es="Completamente bilingüe en inglés y español. Soporte técnico en el idioma con el que te sientas más cómodo.">Fully bilingual in English and Spanish. Tech support in the language you are most comfortable with.</div>
       </div>
       <div class="why-item">
         <div class="why-icon">📋</div>
-        <div class="why-title">Flat Rate Pricing</div>
-        <div class="why-desc">You know the price before we start. No surprises, no hidden fees, no hourly uncertainty.</div>
+        <div class="why-title" data-es="Precios Fijos">Flat Rate Pricing</div>
+        <div class="why-desc" data-es="Sabes el precio antes de empezar. Sin sorpresas, sin cargos ocultos, sin incertidumbre por hora.">You know the price before we start. No surprises, no hidden fees, no hourly uncertainty.</div>
       </div>
       <div class="why-item">
         <div class="why-icon">🏅</div>
-        <div class="why-title">CompTIA A+ Certified</div>
-        <div class="why-desc">Professionally certified, with hands-on experience building, repairing and troubleshooting PCs and networks.</div>
+        <div class="why-title" data-es="Certificación CompTIA A+">CompTIA A+ Certified</div>
+        <div class="why-desc" data-es="Certificación profesional, con experiencia práctica construyendo, reparando y dando solución a computadoras y redes.">Professionally certified, with hands-on experience building, repairing and troubleshooting PCs and networks.</div>
       </div>
       <div class="why-item">
         <div class="why-icon">📞</div>
-        <div class="why-title">A Real Person Answers</div>
-        <div class="why-desc">Call or text (203) 816-0678 and Dan answers. No call centers, no bots, no runaround ever.</div>
+        <div class="why-title" data-es="Una Persona Real Contesta">A Real Person Answers</div>
+        <div class="why-desc" data-es="Llama o envía un mensaje al (203) 816-0678 y Dan contesta. Sin centros de llamadas, sin bots, sin vueltas.">Call or text (203) 816-0678 and Dan answers. No call centers, no bots, no runaround ever.</div>
       </div>
       <div class="why-item">
         <div class="why-icon">✅</div>
-        <div class="why-title">No Fix, No Charge</div>
-        <div class="why-desc">If we cannot fix it, you do not pay. Simple as that. Zero risk to try us.</div>
+        <div class="why-title" data-es="Sin Arreglo, Sin Cargo">No Fix, No Charge</div>
+        <div class="why-desc" data-es="Si no podemos arreglarlo, no pagas. Así de simple. Cero riesgo para probarnos.">If we cannot fix it, you do not pay. Simple as that. Zero risk to try us.</div>
       </div>
     </div>
   </div>
@@ -551,59 +592,82 @@ section{padding:80px 5%}
 <!-- REVIEWS -->
 <section class="reviews-bg" id="reviews">
   <div class="section-inner">
-    <p class="section-label">Customer Reviews</p>
-    <h2 class="section-title">What customers say about Fix My Tech CT.</h2>
-    <p class="section-sub">Real reviews from real customers on Google.</p>
+    <p class="section-label" data-es="Opiniones de Clientes">Customer Reviews</p>
+    <h2 class="section-title" data-es="Lo que dicen los clientes de Fix My Tech CT.">What customers say about Fix My Tech CT.</h2>
+    <p class="section-sub" data-es="Opiniones reales de clientes reales en Google.">Real reviews from real customers on Google.</p>
+    <div class="reviews-summary"><span class="rs-stars" aria-hidden="true">★★★★★</span><span class="rs-text" data-es="Reseñas de 5 estrellas en Google">5-star reviews on Google</span></div>
     <div class="reviews-grid two">
       <div class="review-card">
-        <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
-        <p class="review-text">Dan set up my computer and did an impeccable job with the cable management. He worked quickly, made sure everything was running properly, and walked me through issues that could come up so I knew what to expect. Everything is neat, organized, and working great. Highly recommend Fix My Tech CT!</p>
+        <div class="review-head"><div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div><span class="review-g" title="Google review">G</span></div>
+        <p class="review-text" data-es="Dan configuró mi computadora y hizo un trabajo impecable con la organización de cables. Trabajó rápido, se aseguró de que todo funcionara correctamente y me explicó los problemas que podrían surgir para que supiera qué esperar. Todo está ordenado y funcionando de maravilla. ¡Altamente recomendado!">Dan set up my computer and did an impeccable job with the cable management. He worked quickly, made sure everything was running properly, and walked me through issues that could come up so I knew what to expect. Everything is neat, organized, and working great. Highly recommend Fix My Tech CT!</p>
         <div class="review-author">
           <div class="review-avatar">LF</div>
           <div>
             <div class="review-name">Lesly Fuentes</div>
-            <div class="review-source">Google review</div>
+            <div class="review-source" data-es="Opinión de Google">Google review</div>
           </div>
         </div>
       </div>
       <div class="review-card">
-        <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
-        <p class="review-text">Daniel from Fix my Tech CT came promptly &amp; set up my computer effortlessly. He was very courteous, professional &amp; efficient. I am very satisfied with the service and I would highly recommend him. I will use his services again next time I need.</p>
+        <div class="review-head"><div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div><span class="review-g" title="Google review">G</span></div>
+        <p class="review-text" data-es="Daniel de Fix My Tech CT llegó puntual y configuró mi computadora sin esfuerzo. Fue muy amable, profesional y eficiente. Estoy muy satisfecho con el servicio y lo recomiendo encarecidamente. Usaré sus servicios de nuevo la próxima vez que lo necesite.">Daniel from Fix my Tech CT came promptly &amp; set up my computer effortlessly. He was very courteous, professional &amp; efficient. I am very satisfied with the service and I would highly recommend him. I will use his services again next time I need.</p>
         <div class="review-author">
           <div class="review-avatar">SP</div>
           <div>
             <div class="review-name">Seunghee Park</div>
-            <div class="review-source">Google review</div>
+            <div class="review-source" data-es="Opinión de Google">Google review</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-head"><div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div><span class="review-g" title="Google review">G</span></div>
+        <p class="review-text" data-es="Después de una publicación en Nextdoor, él se comunicó proactivamente para averiguar cuál era el problema (la nueva PC no se estaba armando como yo quería). En menos de una hora me dio respuesta, compartió fotos y logró solucionar el problema. Siguió dando seguimiento en los días siguientes y recomendó las piezas correctas. Instrucciones detalladas paso a paso. Altamente recomendado.">After a post on Nextdoor he proactively reached out to see what the problem was (new PC build was not going my way). Within an hour he got back to me, shared some pictures and was able to fix the problem for me. Followed up over next few days and recommended correct parts. Detailed step by step instructions. Highly recommend.</p>
+        <div class="review-author">
+          <div class="review-avatar">KN</div>
+          <div>
+            <div class="review-name">Kris Nyzio</div>
+            <div class="review-source" data-es="Opinión de Google">Google review</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-head"><div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div><span class="review-g" title="Google review">G</span></div>
+        <p class="review-text" data-es="No dudes en contactar a Dan por cualquier problema de audio/video/tecnología que tengas. Estaba a punto de rendirme antes de contactarlo. No era un problema simple, pero logró resolverlo. Llegó a la hora, sus tarifas son razonables y fue muy agradable de trabajar con él!">Dont hesitate to reach out to Dan for any audio/visual/computer tech issue you might have. I was about to give up before I contacted Dan. It was not a simple problem but he was able to figure it out. He showed up on time, his rates are reasonable and was nice to work with!</p>
+        <div class="review-author">
+          <div class="review-avatar">LW</div>
+          <div>
+            <div class="review-name">Larry Winchel</div>
+            <div class="review-source" data-es="Opinión de Google">Google review</div>
           </div>
         </div>
       </div>
     </div>
     <div class="reviews-cta">
-      <p>Had a good experience? A quick Google review helps a lot.</p>
-      <a href="https://g.page/r/CeSVxcWgmwAgEBI/review" target="_blank" rel="noopener" class="btn-primary">⭐ Leave a Google Review</a>
+      <p data-es="¿Tuviste una buena experiencia? Una rápida opinión en Google ayuda mucho.">Had a good experience? A quick Google review helps a lot.</p>
+      <a href="https://g.page/r/CeSVxcWgmwAgEBI/review" target="_blank" rel="noopener" class="btn-primary" data-es="⭐ Deja una Opinión en Google">⭐ Leave a Google Review</a>
     </div>
   </div>
 </section>
 
 <!-- SERVICE AREAS -->
-<section class="areas-bg">
+<section class="areas-bg" id="areas">
   <div class="section-inner">
-    <p class="section-label">Where We Serve</p>
-    <h2 class="section-title">Serving Fairfield County & Westchester</h2>
-    <p class="section-sub">We come to you. On-site support across the entire region, no travel fee within our service area.</p>
+    <p class="section-label" data-es="Dónde Brindamos Servicio">Where We Serve</p>
+    <h2 class="section-title" data-es="Cubriendo el Condado de Fairfield y Westchester">Serving Fairfield County &amp; Westchester</h2>
+    <p class="section-sub" data-es="Nosotros vamos a ti. Soporte en persona en toda la región, sin cargo de viaje dentro de nuestra zona de servicio.">We come to you. On-site support across the entire region, no travel fee within our service area.</p>
     <div class="areas-grid">
-      <a href="#contact" class="area-pill">Stamford, CT</a>
-      <a href="#contact" class="area-pill">Greenwich, CT</a>
-      <a href="#contact" class="area-pill">Norwalk, CT</a>
-      <a href="#contact" class="area-pill">Westport, CT</a>
-      <a href="#contact" class="area-pill">Fairfield, CT</a>
-      <a href="#contact" class="area-pill">Darien, CT</a>
-      <a href="#contact" class="area-pill">New Canaan, CT</a>
-      <a href="#contact" class="area-pill">Bridgeport, CT</a>
-      <a href="#contact" class="area-pill">White Plains, NY</a>
-      <a href="#contact" class="area-pill">Scarsdale, NY</a>
-      <a href="#contact" class="area-pill">Yonkers, NY</a>
-      <a href="#contact" class="area-pill">New Rochelle, NY</a>
+      <a href="stamford.html" class="area-pill">Stamford, CT</a>
+      <a href="greenwich.html" class="area-pill">Greenwich, CT</a>
+      <a href="norwalk.html" class="area-pill">Norwalk, CT</a>
+      <a href="westport.html" class="area-pill">Westport, CT</a>
+      <a href="fairfield.html" class="area-pill">Fairfield, CT</a>
+      <a href="darien.html" class="area-pill">Darien, CT</a>
+      <a href="new-canaan.html" class="area-pill">New Canaan, CT</a>
+      <a href="bridgeport.html" class="area-pill">Bridgeport, CT</a>
+      <a href="white-plains.html" class="area-pill">White Plains, NY</a>
+      <a href="scarsdale.html" class="area-pill">Scarsdale, NY</a>
+      <a href="yonkers.html" class="area-pill">Yonkers, NY</a>
+      <a href="new-rochelle.html" class="area-pill">New Rochelle, NY</a>
     </div>
   </div>
 </section>
@@ -611,84 +675,87 @@ section{padding:80px 5%}
 <!-- CONTACT -->
 <section class="contact-bg" id="contact">
   <div class="section-inner">
-    <p class="section-label">Get In Touch</p>
-    <h2 class="section-title" style="color:var(--white)">Let's fix it today.</h2>
-    <p class="section-sub">Call, text, or fill out the form. Same-day response guaranteed.</p>
+    <p class="section-label" data-es="Ponte en Contacto">Get In Touch</p>
+    <h2 class="section-title" style="color:var(--white)" data-es="Lo arreglamos hoy.">Let's fix it today.</h2>
+    <p class="section-sub" data-es="Llama, envía un mensaje o completa el formulario. Garantizamos respuesta el mismo día.">Call, text, or fill out the form. Same-day response guaranteed.</p>
     <div class="contact-grid">
       <div class="contact-info">
         <div class="contact-item">
           <div class="contact-icon">📞</div>
           <div>
-            <div class="contact-item-label">Call or Text</div>
-            <div class="contact-item-value"><a href="tel:+12038160678">(203) 816-0678</a></div>
+            <div class="contact-item-label" data-es="Llama o Envía un Mensaje">Call or Text</div>
+            <div class="contact-item-value"><a href="tel:+120****0678">(203) 816-0678</a></div>
           </div>
         </div>
         <div class="contact-item">
           <div class="contact-icon">📧</div>
           <div>
-            <div class="contact-item-label">Email</div>
+            <div class="contact-item-label" data-es="Correo Electrónico">Email</div>
             <div class="contact-item-value"><a href="mailto:Fixmytechct@gmail.com">Fixmytechct@gmail.com</a></div>
           </div>
         </div>
         <div class="contact-item">
           <div class="contact-icon">📍</div>
           <div>
-            <div class="contact-item-label">Service Area</div>
-            <div class="contact-item-value">Fairfield County, CT & Westchester, NY</div>
+            <div class="contact-item-label" data-es="Zona de Servicio">Service Area</div>
+            <div class="contact-item-value" data-es="Condado de Fairfield, CT y Westchester, NY">Fairfield County, CT &amp; Westchester, NY</div>
           </div>
         </div>
         <div class="contact-item">
           <div class="contact-icon">🕐</div>
           <div>
-            <div class="contact-item-label">Hours</div>
-            <div class="contact-item-value">Mon–Sat, 9am–7pm</div>
+            <div class="contact-item-label" data-es="Horarios">Hours</div>
+            <div class="contact-item-value" data-es="Lun–Sáb, 9am–7pm">Mon–Sat, 9am–7pm</div>
           </div>
         </div>
         <div class="contact-item">
           <div class="contact-icon">⚡</div>
           <div>
-            <div class="contact-item-label">Response Time</div>
-            <div class="contact-item-value">Same day, usually within the hour</div>
+            <div class="contact-item-label" data-es="Tiempo de Respuesta">Response Time</div>
+            <div class="contact-item-value" data-es="Mismo día, generalmente en menos de una hora">Same day, usually within the hour</div>
           </div>
         </div>
       </div>
       <form class="contact-form" id="contactForm" onsubmit="handleSubmit(event)">
         <div class="form-row">
           <div class="form-group">
-            <label>First Name</label>
-            <input type="text" name="first_name" placeholder="John" required>
+            <label data-es="Nombre">First Name</label>
+            <input type="text" name="first_name" placeholder="John" data-es-placeholder="Juan" required>
           </div>
           <div class="form-group">
-            <label>Last Name</label>
-            <input type="text" name="last_name" placeholder="Smith" required>
+            <label data-es="Apellido">Last Name</label>
+            <input type="text" name="last_name" placeholder="Smith" data-es-placeholder="García" required>
           </div>
         </div>
         <div class="form-group">
-          <label>Phone Number</label>
+          <label data-es="Número de Teléfono">Phone Number</label>
           <input type="tel" name="phone" placeholder="(203) 555-0000" required>
         </div>
         <div class="form-group">
-          <label>What do you need help with?</label>
+          <label data-es="¿En qué podemos ayudarte?">What do you need help with?</label>
           <select name="service" required>
-            <option value="">Select a service...</option>
-            <option>Computer Tune-Up</option>
-            <option>Virus Removal</option>
-            <option>WiFi Setup or Troubleshooting</option>
-            <option>New Device Setup</option>
-            <option>Printer Setup</option>
-            <option>Phone or Tablet</option>
-            <option>Smart TV Setup</option>
-            <option>Password Recovery</option>
-            <option>Small Business IT</option>
-            <option>Monthly Support Plan</option>
-            <option>Something Else</option>
+            <option value="" data-es="Selecciona un servicio...">Select a service...</option>
+            <option data-es="Afinamiento de Computadora">Computer Tune-Up</option>
+            <option data-es="Eliminación de Virus">Virus Removal</option>
+            <option data-es="Configuración o Solución de WiFi">WiFi Setup or Troubleshooting</option>
+            <option data-es="Configuración de Nuevo Equipo">New Device Setup</option>
+            <option data-es="Configuración de Impresora">Printer Setup</option>
+            <option data-es="Teléfono o Tablet">Phone or Tablet</option>
+            <option data-es="Configuración de TV Inteligente">Smart TV Setup</option>
+            <option data-es="Recuperación de Datos">Data Recovery</option>
+            <option data-es="Armado de PC a Medida">Custom PC Build</option>
+            <option data-es="Limpieza y Mantenimiento de GPU">GPU Cleaning / Maintenance</option>
+            <option data-es="Recuperación de Contraseña">Password Recovery</option>
+            <option data-es="TI para Pequeños Negocios">Small Business IT</option>
+            <option data-es="Plan de Soporte Mensual">Monthly Support Plan</option>
+            <option data-es="Algo Más">Something Else</option>
           </select>
         </div>
         <div class="form-group">
-          <label>Tell me more (optional)</label>
-          <textarea name="message" placeholder="What is going on with your device?"></textarea>
+          <label data-es="Cuéntame más (opcional)">Tell me more (optional)</label>
+          <textarea name="message" placeholder="What is going on with your device?" data-es-placeholder="¿Qué le pasa a tu dispositivo?"></textarea>
         </div>
-        <button type="submit" class="form-submit" id="submitBtn">Send Message</button>
+        <button type="submit" class="form-submit" id="submitBtn" data-es="Enviar Mensaje">Send Message</button>
       </form>
     </div>
   </div>
@@ -699,20 +766,20 @@ section{padding:80px 5%}
   <div class="footer-grid">
     <div class="footer-brand">
       <a href="#" class="nav-logo">Fix My <span>Tech</span> CT</a>
-      <p>Local tech support for homes and small businesses in Stamford, Fairfield County and Westchester. We fix it, we teach it.</p>
+      <p data-es="Soporte técnico local para hogares y pequeños negocios en Stamford, Condado de Fairfield y Westchester. Lo arreglamos y te lo enseñamos.">Local tech support for homes and small businesses in Stamford, Fairfield County and Westchester. We fix it, we teach it.</p>
     </div>
     <div>
-      <div class="footer-col-title">Services</div>
+      <div class="footer-col-title" data-es="Servicios">Services</div>
       <ul class="footer-links">
-        <li><a href="#services">Computer Repair</a></li>
-        <li><a href="#services">WiFi Setup</a></li>
-        <li><a href="#services">Virus Removal</a></li>
-        <li><a href="#services">Phone & Tablet</a></li>
-        <li><a href="#services">Small Business IT</a></li>
+        <li><a href="#services" data-es="Reparación de Computadoras">Computer Repair</a></li>
+        <li><a href="#services" data-es="Configuración de WiFi">WiFi Setup</a></li>
+        <li><a href="#services" data-es="Eliminación de Virus">Virus Removal</a></li>
+        <li><a href="#services" data-es="Teléfono y Tablet">Phone &amp; Tablet</a></li>
+        <li><a href="#services" data-es="TI para Pequeños Negocios">Small Business IT</a></li>
       </ul>
     </div>
     <div>
-      <div class="footer-col-title">Service Areas</div>
+      <div class="footer-col-title" data-es="Zonas de Servicio">Service Areas</div>
       <ul class="footer-links">
         <li><a href="#contact">Stamford, CT</a></li>
         <li><a href="#contact">Greenwich, CT</a></li>
@@ -723,31 +790,38 @@ section{padding:80px 5%}
       </ul>
     </div>
     <div>
-      <div class="footer-col-title">Contact</div>
+      <div class="footer-col-title" data-es="Contacto">Contact</div>
       <ul class="footer-links">
-        <li><a href="tel:+12038160678">(203) 816-0678</a></li>
+        <li><a href="tel:+120****0678">(203) 816-0678</a></li>
         <li><a href="mailto:Fixmytechct@gmail.com">Fixmytechct@gmail.com</a></li>
-        <li><a href="#how">How It Works</a></li>
-        <li><a href="#plans">Monthly Plans</a></li>
-        <li><a href="#about">Why Us</a></li>
+        <li><a href="#how" data-es="Cómo Funciona">How It Works</a></li>
+        <li><a href="#plans" data-es="Planes Mensuales">Monthly Plans</a></li>
+        <li><a href="#about" data-es="Por Qué Elegirnos">Why Us</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
-    <p>© 2026 <strong style="color:var(--cyan)">Fix My Tech CT</strong> — Local Tech Support for Fairfield County CT & Westchester NY. All rights reserved. <a href="tel:+12038160678">(203) 816-0678</a></p>
+    <p data-html data-es="© 2026 <strong style='color:var(--cyan)'>Fix My Tech CT</strong>: Soporte Técnico Local para el Condado de Fairfield CT y Westchester NY. Todos los derechos reservados. <a href='tel:+12038160678'>(203) 816-0678</a>">© 2026 <strong style="color:var(--cyan)">Fix My Tech CT</strong>: Local Tech Support for Fairfield County CT &amp; Westchester NY. All rights reserved. <a href="tel:+120****0678">(203) 816-0678</a></p>
   </div>
 </footer>
 
 <div class="mobile-bar">
-  <a href="tel:+12038160678" class="mb-call">📞 Call</a>
-  <a href="sms:+12038160678" class="mb-text">💬 Text</a>
+  <a href="tel:+120****0678" class="mb-call" data-es="📞 Llamar">📞 Call</a>
+  <a href="sms:+120****0678" class="mb-text" data-es="💬 Mensaje">💬 Text</a>
 </div>
 
 <script>
 async function handleSubmit(e){
   e.preventDefault();
   const btn = document.getElementById('submitBtn');
-  btn.textContent = 'Sending...';
+  const isEs = getLang() === 'es';
+  const t = {
+    sending: isEs ? 'Enviando...' : 'Sending...',
+    sent: isEs ? '¡Mensaje enviado! Te llamaremos pronto.' : 'Message Sent! We will call you soon.',
+    reset: isEs ? 'Enviar Mensaje' : 'Send Message',
+    err: isEs ? 'Algo salió mal' : 'Something went wrong'
+  };
+  btn.textContent = t.sending;
   btn.disabled = true;
 
   const form = document.getElementById('contactForm');
@@ -767,22 +841,22 @@ async function handleSubmit(e){
   try {
     await emailjs.send('service_88bstvp', 'template_u74jii7', templateParams);
     if (window.gtag) gtag('event', 'generate_lead', {method: 'contact_form'});
-    btn.textContent = 'Message Sent! We will call you soon.';
+    btn.textContent = t.sent;
     btn.style.background = '#22c55e';
     form.reset();
     setTimeout(() => {
-      btn.textContent = 'Send Message';
+      btn.textContent = t.reset;
       btn.style.background = '';
       btn.disabled = false;
     }, 4000);
   } catch(error) {
     console.error('EmailJS error:', error);
     const code = (error && error.status) ? ' (error ' + error.status + ')' : '';
-    btn.textContent = 'Something went wrong' + code + '. Please call (203) 816-0678.';
+    btn.textContent = t.err + code + (isEs ? '. Por favor llama al (203) 816-0678.' : '. Please call (203) 816-0678.');
     btn.style.background = '#ef4444';
     btn.disabled = false;
     setTimeout(() => {
-      btn.textContent = 'Send Message';
+      btn.textContent = t.reset;
       btn.style.background = '';
     }, 8000);
   }
@@ -810,6 +884,67 @@ document.querySelectorAll('.nav-links a').forEach(link => {
     document.querySelector('.nav-links').style.display = '';
   });
 });
+
+// ===== LANGUAGE SWITCHING (EN / ES) =====
+var LANG_KEY = 'fixmytech_lang';
+function getLang(){
+  try { return localStorage.getItem(LANG_KEY) === 'es' ? 'es' : 'en'; }
+  catch(e){ return 'en'; }
+}
+function setLang(lang){
+  try { localStorage.setItem(LANG_KEY, lang); } catch(e){}
+}
+// Capture the original (English) content of every [data-es] element exactly once,
+// so we can always restore it. data-html elements keep innerHTML, others keep text.
+function captureEnglish(){
+  document.querySelectorAll('[data-es]').forEach(function(el){
+    if (el.hasAttribute('data-en-captured')) return;
+    el.setAttribute('data-en', el.hasAttribute('data-html') ? el.innerHTML : el.textContent);
+    el.setAttribute('data-en-captured', '1');
+  });
+}
+function renderLang(lang){
+  document.documentElement.setAttribute('lang', lang);
+  document.querySelectorAll('[data-es]').forEach(function(el){
+    var val = (lang === 'es') ? el.getAttribute('data-es') : el.getAttribute('data-en');
+    if (val === null || val === undefined) return;
+    if (el.hasAttribute('data-html')) { el.innerHTML = val; }
+    else { el.textContent = val; }
+  });
+  // Placeholders via data-es-placeholder
+  document.querySelectorAll('[data-es-placeholder]').forEach(function(el){
+    if (lang === 'es') {
+      el.setAttribute('placeholder', el.getAttribute('data-es-placeholder'));
+    } else {
+      el.setAttribute('placeholder', el.getAttribute('data-en-placeholder') || el.getAttribute('placeholder'));
+    }
+  });
+  // Update toggle button states
+  document.querySelectorAll('.lang-toggle button[data-lang]').forEach(function(b){
+    b.setAttribute('aria-pressed', b.getAttribute('data-lang') === lang ? 'true' : 'false');
+  });
+  // Keep the form submit button label in sync (unless mid-submission)
+  var btn = document.getElementById('submitBtn');
+  if (btn && !btn.disabled) btn.textContent = (lang === 'es') ? 'Enviar Mensaje' : 'Send Message';
+}
+function switchLang(lang){
+  lang = (lang === 'es') ? 'es' : 'en';
+  setLang(lang);
+  renderLang(lang);
+}
+(function initLang(){
+  // Remember original placeholders too
+  document.querySelectorAll('[data-es-placeholder]').forEach(function(el){
+    if (!el.hasAttribute('data-en-placeholder')) {
+      el.setAttribute('data-en-placeholder', el.getAttribute('placeholder') || '');
+    }
+  });
+  captureEnglish();
+  renderLang(getLang());
+  document.querySelectorAll('.lang-toggle button[data-lang]').forEach(function(b){
+    b.addEventListener('click', function(){ switchLang(b.getAttribute('data-lang')); });
+  });
+})();
 </script>
 </body>
 </html>
