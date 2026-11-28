@@ -37,6 +37,7 @@
   ]
 }
 </script>
+<style>.remote-price{display:block;font-size:12px;font-weight:600;color:var(--gray-text);text-align:right;margin-top:2px}.plan-note{max-width:760px;margin:28px auto 0;text-align:center;font-size:14px;line-height:1.6;color:var(--gray-text)}</style>
 </head>
 <body>
 <nav>
@@ -72,7 +73,7 @@
   <div class="section-inner">
     <p class="section-label" data-es="Qué Reparamos">What We Fix</p>
     <h2 class="section-title" data-es="Cada Servicio, Cada Precio">Every Service, Every Price</h2>
-    <p class="section-sub" data-es="Sabes el precio antes de empezar el trabajo. Remoto o en persona. Tú eliges.">You know the price before we start work. Remote or on-site. You choose.</p>
+    <p class="section-sub" data-es="Sabes el precio antes de empezar el trabajo. Remoto o en persona. Tú eliges.">Flat price, quoted before we start. The on-site price is shown first, with the remote price underneath.</p>
     <div class="services-img-row">
       <div class="services-img-item"><img src="https://images.unsplash.com/photo-1587831990711-23ca6441447b?w=400&q=80" alt="Computer repair" loading="lazy"><div class="services-img-label" data-es="Reparación de Computadoras">Computer Repair</div></div>
       <div class="services-img-item"><img src="https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=400&q=80" alt="WiFi setup" loading="lazy"><div class="services-img-label" data-es="WiFi y Redes">WiFi &amp; Networking</div></div>
@@ -81,25 +82,40 @@
     </div>
     <div class="service-group">
       <h3 class="service-group-title" data-es="Hogar y Residencial">Home &amp; Residential</h3>
-      <div class="service-item"><div><div class="service-name" data-es="Afinamiento y Optimización de Computadora">Computer Tune-Up &amp; Optimization</div><div class="service-desc" data-es="Acelera una computadora lenta, elimina archivos basura, actualiza el software y revisa el estado del sistema">Speed up a slow computer, remove junk files, update software, and check system health</div></div><div class="service-price">$75</div></div>
-      <div class="service-item"><div><div class="service-name" data-es="Eliminación de Virus y Malware">Virus &amp; Malware Removal</div><div class="service-desc" data-es="Eliminación completa, limpieza del navegador y consejos de prevención para que no vuelva a pasar">Full removal, browser cleanup, and prevention tips so it does not happen again</div></div><div class="service-price">$85</div></div>
-      <div class="service-item"><div><div class="service-name" data-es="Configuración de Nuevo Equipo y Transferencia de Datos">New Device Setup &amp; Data Transfer</div><div class="service-desc" data-es="Desempaquetamos, conectamos, transferimos archivos, instalamos aplicaciones y te explicamos todo">Unbox, connect, transfer files, install apps, and walk you through everything</div></div><div class="service-price">$100</div></div>
-      <div class="service-item"><div><div class="service-name" data-es="Configuración y Solución de Problemas de WiFi">Home WiFi Setup &amp; Troubleshooting</div><div class="service-desc" data-es="Ubicación del router, conexión de dispositivos, solución de zonas sin señal y red para invitados">Router placement, device connections, dead spot fixes, and guest network setup</div></div><div class="service-price">$75</div></div>
-      <div class="service-item"><div><div class="service-name" data-es="Configuración y Solución de Problemas de Impresora">Printer Setup &amp; Troubleshooting</div><div class="service-desc" data-es="Instalamos controladores, conectamos sin cables, probamos desde todos los dispositivos y te enseñamos a reconectar">Install drivers, connect wirelessly, test from all devices, and teach you to reconnect</div></div><div class="service-price">$60</div></div>
-      <div class="service-item"><div><div class="service-name" data-es="Configuración de Teléfono y Tablet">Phone &amp; Tablet Setup</div><div class="service-desc" data-es="iOS y Android, cuentas, aplicaciones y transferencia de datos desde tu dispositivo anterior">iOS and Android, accounts, apps, and data transfer from old device</div></div><div class="service-price">$50</div></div>
-      <div class="service-item"><div><div class="service-name" data-es="Restablecimiento de Contraseñas y Recuperación de Cuentas">Password Reset &amp; Account Recovery</div><div class="service-desc" data-es="Recupera el acceso, configura un administrador de contraseñas y habilita la autenticación de dos factores">Recover access, set up a password manager, and enable two-factor authentication</div></div><div class="service-price">$50</div></div>
-      <div class="service-item"><div><div class="service-name" data-es="Configuración de TV Inteligente y Streaming">Smart TV &amp; Streaming Setup</div><div class="service-desc" data-es="Conecta a WiFi, configura Netflix, Hulu, Disney+, empareja controles remotos y recorre las funciones">Connect to WiFi, set up Netflix, Hulu, Disney+, pair remotes, and walk through features</div></div><div class="service-price">$60</div></div>
+      <div class="service-item"><div><div class="service-name" data-es="Afinamiento y Optimización de Computadora">Computer Tune-Up &amp; Optimization</div><div class="service-desc" data-es="Acelera una computadora lenta, elimina archivos basura, actualiza el software y revisa el estado del sistema">Speed up a slow computer, remove junk files, update software, and check system health</div></div><div class="service-price">$75<span class="remote-price" data-es="Remoto $65">Remote $65</span></div></div>
+      <div class="service-item"><div><div class="service-name" data-es="Eliminación de Virus y Malware">Virus &amp; Malware Removal</div><div class="service-desc" data-es="Eliminación completa, limpieza del navegador y consejos de prevención para que no vuelva a pasar">Full removal, browser cleanup, and prevention tips so it does not happen again</div></div><div class="service-price">$85<span class="remote-price" data-es="Remoto $75">Remote $75</span></div></div>
+      <div class="service-item"><div><div class="service-name" data-es="Configuración de Nuevo Equipo y Transferencia de Datos">New Device Setup &amp; Data Transfer</div><div class="service-desc" data-es="Desempaquetamos, conectamos, transferimos archivos, instalamos aplicaciones y te explicamos todo">Unbox, connect, transfer files, install apps, and walk you through everything</div></div><div class="service-price">$100<span class="remote-price" data-es="Remoto $85">Remote $85</span></div></div>
+      <div class="service-item"><div><div class="service-name" data-es="Configuración y Solución de Problemas de WiFi">Home WiFi Setup &amp; Troubleshooting</div><div class="service-desc" data-es="Ubicación del router, conexión de dispositivos, solución de zonas sin señal y red para invitados">Router placement, device connections, dead spot fixes, and guest network setup</div></div><div class="service-price">$75<span class="remote-price" data-es="Remoto $60">Remote $60</span></div></div>
+      <div class="service-item"><div><div class="service-name" data-es="Configuración y Solución de Problemas de Impresora">Printer Setup &amp; Troubleshooting</div><div class="service-desc" data-es="Instalamos controladores, conectamos sin cables, probamos desde todos los dispositivos y te enseñamos a reconectar">Install drivers, connect wirelessly, test from all devices, and teach you to reconnect</div></div><div class="service-price">$85<span class="remote-price" data-es="Remoto $70">Remote $70</span></div></div>
+      <div class="service-item"><div><div class="service-name" data-es="Configuración de Teléfono y Tablet">Phone &amp; Tablet Setup</div><div class="service-desc" data-es="iOS y Android, cuentas, aplicaciones y transferencia de datos desde tu dispositivo anterior">iOS and Android, accounts, apps, and data transfer from old device</div></div><div class="service-price">$50<span class="remote-price" data-es="Remoto $40">Remote $40</span></div></div>
+      <div class="service-item"><div><div class="service-name" data-es="Restablecimiento de Contraseñas y Recuperación de Cuentas">Password Reset &amp; Account Recovery</div><div class="service-desc" data-es="Recupera el acceso, configura un administrador de contraseñas y habilita la autenticación de dos factores">Recover access, set up a password manager, and enable two-factor authentication</div></div><div class="service-price">$50<span class="remote-price" data-es="Remoto $40">Remote $40</span></div></div>
+      <div class="service-item"><div><div class="service-name" data-es="Configuración de TV Inteligente y Streaming">Smart TV &amp; Streaming Setup</div><div class="service-desc" data-es="Conecta a WiFi, configura Netflix, Hulu, Disney+, empareja controles remotos y recorre las funciones">Connect to WiFi, set up Netflix, Hulu, Disney+, pair remotes, and walk through features</div></div><div class="service-price">$60<span class="remote-price" data-es="Remoto $50">Remote $50</span></div></div>
       <div class="service-item"><div><div class="service-name" data-es="Recuperación de Datos">Data Recovery</div><div class="service-desc" data-es="Recupera fotos, archivos y videos de teléfonos, tarjetas de memoria, memorias USB y discos duros. El precio se cotiza después de revisar el dispositivo. La recuperación depende del daño y te digo qué es realista antes de que decidas.">Recover photos, files and videos from phones, memory cards, USB drives and hard drives. Price quoted after we look at the device. Recovery depends on the damage, and I tell you what is realistic before you decide.</div></div><div class="service-price" data-es="Cotización previa">Quoted first</div></div>
       <div class="service-item"><div><div class="service-name" data-es="Armado de PC a Medida">Custom PC Builds</div><div class="service-desc" data-es="Piezas elegidas para tu presupuesto y uso, armado, cableado ordenado, probado y listo para usar">Parts picked for your budget and how you use it, then built, cable-managed, tested and set up for you</div></div><div class="service-price" data-es="Cotización a medida">Custom quote</div></div>
       <div class="service-item"><div><div class="service-name" data-es="Limpieza y Mantenimiento de GPU">GPU Cleaning &amp; Maintenance</div><div class="service-desc" data-es="Limpieza de polvo, revisión de ventiladores, renovación de pasta térmica y prueba de temperaturas para tarjetas gráficas que se calientan o hacen ruido">Dust removal, fan check, thermal paste refresh and temperature testing for graphics cards that run hot or loud</div></div><div class="service-price" data-es="Cotización previa">Quoted first</div></div>
     </div>    <div class="service-group">
       <h3 class="service-group-title" data-es="Pequeños Negocios">Small Business</h3>
       <div class="service-item"><div><div class="service-name" data-es="Configuración de Microsoft 365">Microsoft 365 Setup</div><div class="service-desc" data-es="Correo empresarial, Outlook, Teams, OneDrive y SharePoint totalmente configurados, con capacitación del personal">Business email, Outlook, Teams, OneDrive, SharePoint fully configured with staff training</div></div><div class="service-price">$200</div></div>
-      <div class="service-item"><div><div class="service-name" data-es="Configuración de Red de Oficina">Office Network Setup</div><div class="service-desc" data-es="Router, switch, conexiones por cable, WiFi seguro, red para invitados y documentación completa">Router, switch, wired connections, secure WiFi, guest network, and full documentation</div></div><div class="service-price">$200–$300</div></div>
+      <div class="service-item"><div><div class="service-name" data-es="Configuración de WiFi y Red de Oficina">Office WiFi &amp; Network Setup</div><div class="service-desc" data-es="Router, switch, conexiones por cable, WiFi seguro, red para invitados y documentación completa">Router, switch, wired connections, secure WiFi, guest network, and full documentation</div></div><div class="service-price">$200–$300</div></div>
       <div class="service-item"><div><div class="service-name" data-es="Configuración de Estación de Trabajo">Workstation Setup</div><div class="service-desc" data-es="Configuración, instalación de software, conexión de red, cuenta de usuario, probado y listo">Setup, software install, network connection, user account, tested and ready</div></div><div class="service-price" data-es="$150 c/u">$150 each</div></div>
-      <div class="service-item"><div><div class="service-name" data-es="Revisión de Ciberseguridad">Cybersecurity Checkup</div><div class="service-desc" data-es="Revisión de antivirus, contraseñas y controles de acceso, corrección de vulnerabilidades e informe por escrito">Review antivirus, passwords, access controls, patch vulnerabilities, and get a written report</div></div><div class="service-price">$150</div></div>
+      <div class="service-item"><div><div class="service-name" data-es="Revisión de Ciberseguridad">Cybersecurity Checkup</div><div class="service-desc" data-es="Revisión de antivirus, contraseñas y controles de acceso, corrección de vulnerabilidades e informe por escrito">Review antivirus, passwords, access controls, patch vulnerabilities, and get a written report</div></div><div class="service-price">$150<span class="remote-price" data-es="Remoto $125">Remote $125</span></div></div>
       <div class="service-item"><div><div class="service-name" data-es="Capacitación Técnica para el Personal">Staff Tech Training</div><div class="service-desc" data-es="Microsoft 365, seguridad del correo, prevención de phishing y cómo usar tus herramientas con eficacia">Microsoft 365, email safety, phishing awareness, and how to use your tools effectively</div></div><div class="service-price" data-es="$125/hora">$125/hr</div></div>
     </div>
+    <div class="service-group">
+      <div class="service-group-title" data-es="Cableado y Orden de Red de Oficina">Office Wiring &amp; Network Cleanup</div>
+      <div class="service-item"><div><div class="service-name" data-es="Conectar y probar un equipo por Ethernet">Connect and test a device on wired Ethernet</div><div class="service-desc" data-es="Computadora, impresora o conmutador, conectado, etiquetado y probado">Computer, printer or switch, connected, labeled and tested</div></div><div class="service-price" data-es="$40 c/u">$40 each</div></div>
+      <div class="service-item"><div><div class="service-name" data-es="Conexión de equipo especializado o de imágenes">Imaging or specialty equipment connection</div><div class="service-desc" data-es="Equipos de imágenes, NAS y otros equipos especializados">X-ray or imaging machines, NAS and other specialty gear</div></div><div class="service-price" data-es="$70 c/u">$70 each</div></div>
+      <div class="service-item"><div><div class="service-name" data-es="Panel de parcheo y orden de conmutadores">Patch panel and switch cleanup</div><div class="service-desc" data-es="Panel conectado hasta 3 conmutadores, cada sala probada y cables ordenados y asegurados">Panel patched to up to 3 switches, every room tested, cable management tidied and secured</div></div><div class="service-price">$310</div></div>
+      <div class="service-item"><div><div class="service-name" data-es="Nuevo tendido de cable Ethernet">New Ethernet cable run</div><div class="service-desc" data-es="Un cable nuevo desde tu conmutador hasta una sala">One new cable run from your switch to a room</div></div><div class="service-price" data-es="Desde $85">From $85</div></div>
+      <div class="service-item"><div><div class="service-name" data-es="Revisión gratis del estado del sistema">Free system health scan</div><div class="service-desc" data-es="Incluida en cualquier trabajo de red de oficina: revisión de archivos de Windows en cada PC, con una lista escrita de problemas">Included with any office network job: a Windows file check on every office PC, with a written list of problems found</div></div><div class="service-price" data-es="Gratis">Free</div></div>
+      </div>
+    <div class="service-group">
+      <div class="service-group-title" data-es="Tarifas por Hora (trabajo que no es de precio fijo)">Hourly Rates (work that is not a flat-rate service)</div>
+      <div class="service-item"><div><div class="service-name" data-es="Soporte remoto">Remote support</div><div class="service-desc" data-es="Mínimo 30 minutos, luego bloques de 15 minutos">30-minute minimum, then 15-minute blocks</div></div><div class="service-price">$80/hr</div></div>
+      <div class="service-item"><div><div class="service-name" data-es="Soporte en persona">On-site support</div><div class="service-desc" data-es="Mínimo 1 hora, luego bloques de 15 minutos">1-hour minimum, then 15-minute blocks</div></div><div class="service-price">$100/hr</div></div>
+      <div class="service-item"><div><div class="service-name" data-es="Trabajo fuera de horario">After-hours work</div><div class="service-desc" data-es="Después de las 7pm, domingos y feriados">After 7pm, Sundays and holidays</div></div><div class="service-price" data-es="1.5x la tarifa">1.5x rate</div></div>
+      <div class="service-item"><div><div class="service-name" data-es="Respuesta prioritaria">Priority response</div><div class="service-desc" data-es="Empiezo dentro de 2 horas de tu llamada">I start within 2 hours of your call</div></div><div class="service-price">+$50</div></div>
+      </div>
   </div>
 </section>
 
@@ -123,10 +139,10 @@
         <div class="plan-price">$149</div>
         <div class="plan-period" data-es="por mes">per month</div>
         <ul class="plan-features">
+          <li data-es="Hasta 3 dispositivos">Up to 3 devices</li>
           <li data-es="Soporte remoto de hasta 2 horas">Remote support up to 2 hours</li>
-          <li data-es="Llamada mensual de seguimiento">Monthly check-in call</li>
-          <li data-es="Soporte por correo y teléfono">Email and phone support</li>
-          <li data-es="Respuesta en menos de 24 horas">Response within 24 hours</li>
+          <li data-es="Llamada mensual de 15 minutos">Monthly 15-minute check-in call</li>
+          <li data-es="Primera respuesta en 24 horas hábiles">First reply within 24 business hours</li>
         </ul>
         <a href="contact.html" class="plan-cta" data-es="Comenzar">Get Started</a>
       </div>
@@ -136,10 +152,11 @@
         <div class="plan-price">$249</div>
         <div class="plan-period" data-es="por mes">per month</div>
         <ul class="plan-features">
+          <li data-es="Hasta 10 dispositivos">Up to 10 devices</li>
           <li data-es="Soporte remoto de hasta 4 horas">Remote support up to 4 hours</li>
-          <li data-es="Una visita en persona al mes">One on-site visit per month</li>
-          <li data-es="Administración básica de Microsoft 365">Microsoft 365 basic admin</li>
-          <li data-es="Respuesta prioritaria en menos de 4 horas">Priority response within 4 hours</li>
+          <li data-es="Una visita en persona al mes, hasta 2 horas">One on-site visit per month, up to 2 hours</li>
+          <li data-es="Administración básica de Microsoft 365">Basic Microsoft 365 admin</li>
+          <li data-es="Primera respuesta en 4 horas hábiles">First reply within 4 business hours</li>
         </ul>
         <a href="contact.html" class="plan-cta" data-es="Comenzar">Get Started</a>
       </div>
@@ -148,15 +165,17 @@
         <div class="plan-price">$399</div>
         <div class="plan-period" data-es="por mes">per month</div>
         <ul class="plan-features">
-          <li data-es="Soporte remoto ilimitado">Unlimited remote support</li>
-          <li data-es="Dos visitas en persona al mes">Two on-site visits per month</li>
+          <li data-es="Hasta 25 dispositivos">Up to 25 devices</li>
+          <li data-es="Soporte remoto, uso justo hasta 10 horas">Remote support, fair use up to 10 hours</li>
+          <li data-es="Dos visitas al mes, hasta 2 horas cada una">Two on-site visits per month, up to 2 hours each</li>
           <li data-es="Administración completa de Microsoft 365">Full Microsoft 365 admin</li>
-          <li data-es="Respuesta en menos de 2 horas">Response within 2 hours</li>
-          <li data-es="Alta y baja de usuarios">User onboarding and offboarding</li>
+          <li data-es="Primera respuesta en 2 horas hábiles">First reply within 2 business hours</li>
+          <li data-es="Alta y baja de hasta 2 usuarios al mes">Onboarding and offboarding for up to 2 users a month</li>
         </ul>
         <a href="contact.html" class="plan-cta" data-es="Comenzar">Get Started</a>
       </div>
     </div>
+    <p class="plan-note" data-es="Mes a mes, cancela con 30 días de aviso. Cargo único de configuración: $75 Básico, $125 Estándar, $200 Premium (sin costo si pagas 3 meses por adelantado). Dispositivos adicionales: $10 al mes. Horas adicionales: $65/hr remoto, $85/hr en persona. Las horas no usadas no se acumulan.">Month-to-month, cancel with 30 days notice. One-time setup fee: $75 Basic, $125 Standard, $200 Premium (waived if you prepay 3 months). Extra devices: $10 a month. Extra hours: $65/hr remote, $85/hr on-site. Unused hours do not roll over.</p>
   </div>
 </section>
 
